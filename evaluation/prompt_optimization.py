@@ -32,7 +32,7 @@ args = config()
 def eval_sample(item, eval_fn, model):
     x, y = item
     x = tg.Variable(x, requires_grad=False, role_description="query to the language model")
-    y = tg.Variable(y, requires_grad=False, role_description="correct answer for the query")
+    y = tg.Variable(int(y), requires_grad=False, role_description="correct answer for the query")
     response = model(x)
     try:
         eval_output_variable = eval_fn(inputs=dict(prediction=response, ground_truth_answer=y))
@@ -121,7 +121,7 @@ for epoch in range(args.max_epochs):
         losses = []
         for (x, y) in zip(batch_x, batch_y):
             x = tg.Variable(x, requires_grad=False, role_description="query to the language model")
-            y = tg.Variable(y, requires_grad=False, role_description="correct answer for the query")
+            y = tg.Variable(int(y), requires_grad=False, role_description="correct answer for the query")
             response = model(x)
             try:
                 eval_output_variable = eval_fn(inputs=dict(prediction=response, ground_truth_answer=y))
