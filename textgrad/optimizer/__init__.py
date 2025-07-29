@@ -1,3 +1,4 @@
-from .optimizer import TextualGradientDescent, Optimizer, TextualGradientDescentwithMomentum
+from .optimizer import TextualGradientDescent, Optimizer, TextualGradientDescentwithMomentum, TextualAdam
 
 TGD = TextualGradientDescent
+TAdam = TextualAdam

@@ -27,7 +27,7 @@ from .variable import Variable
 from .loss import TextLoss
 from .model import BlackboxLLM
 from .engine import EngineLM, get_engine
-from .optimizer import TextualGradientDescent, TGD
+from .optimizer import TextualGradientDescent, TGD, TextualAdam, TAdam
 from .config import set_backward_engine, SingletonBackwardEngine
 from .autograd import sum, aggregate
 

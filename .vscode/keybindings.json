@@ -1,0 +1,18 @@
+[
+    {
+        "key": "ctrl+f5",
+        "command": "workbench.action.tasks.runTask",
+        "args": "运行当前Python文件"
+    },
+    {
+        "key": "ctrl+shift+f5",
+        "command": "workbench.action.tasks.runTask",
+        "args": "运行Python文件(手动输入参数)"
+    },
+    {
+        "key": "ctrl+alt+f5",
+        "command": "workbench.action.tasks.runTask",
+        "args": "运行prompt_optimization.py(v1配置)"
+    }
+]
+EOF < /dev/null
