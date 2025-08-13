@@ -45,9 +45,20 @@ CONVERSATION_START_INSTRUCTION_BASE = (
     "{conversation}"
 )
 
+# 原始版本（已注释）：
+# OBJECTIVE_INSTRUCTION_BASE = (
+#     "<OBJECTIVE_FUNCTION>Your goal is to give feedback and criticism to the variable given the above evaluation output. "
+#     "Our only goal is to improve the above metric, and nothing else. </OBJECTIVE_FUNCTION>\n\n"
+# )
+
+# 改进版本：添加条件判断，避免过度优化
 OBJECTIVE_INSTRUCTION_BASE = (
-    "<OBJECTIVE_FUNCTION>Your goal is to give feedback and criticism to the variable given the above evaluation output. "
-    "Our only goal is to improve the above metric, and nothing else. </OBJECTIVE_FUNCTION>\n\n"
+    "<OBJECTIVE_FUNCTION>"
+    "First, check if the evaluation shows perfect results (e.g., score=1, 100% accuracy, or explicitly states 'correct'/'perfect'). "
+    "If the evaluation is already perfect, respond with: 'The variable is already performing optimally. No changes needed.' "
+    "Otherwise, provide specific feedback and criticism to improve the metric. "
+    "Focus only on improving cases where the current performance is suboptimal."
+    "</OBJECTIVE_FUNCTION>\n\n"
 )
 
 # Third part of the prompt for the llm backward function.

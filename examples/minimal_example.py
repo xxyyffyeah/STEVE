@@ -20,18 +20,22 @@ if not os.getenv('OPENAI_API_KEY'):
     print("请设置API密钥后重新运行")
     exit(1)
 
-llm_engine = tg.get_engine("gpt-3.5-turbo")
+llm_engine = tg.get_engine("gpt-3.5-turbo-0125")
 tg.set_backward_engine("gpt-4o")
 
 train_set, val_set, test_set, eval_fn = load_task("BBH_object_counting", llm_engine)
 question_str, answer_str = val_set[0]
+question_str = "I have four cauliflowers, a garlic, a cabbage, a potato, a head of broccoli, three yams, a lettuce head, an onion, and a carrot. How many vegetables do I have?"
+answer_str = "14"
 question = tg.Variable(question_str, role_description="question to the LLM", requires_grad=False)
 answer = tg.Variable(str(answer_str), role_description="answer to the question", requires_grad=False)
 
-print(f"测试问题: {question_str[:100]}...")
+print(f"测试问题: {question_str}")
 print(f"正确答案: {answer_str}\n")
 
-system_prompt = tg.Variable("You are a concise LLM. Think step by step.",
+STARTING_SYSTEM_PROMPT = train_set.get_task_description()
+
+system_prompt = tg.Variable(STARTING_SYSTEM_PROMPT,
                             requires_grad=True,
                             role_description="system prompt to guide the LLM's reasoning strategy for accurate responses")
 
@@ -54,14 +58,41 @@ print(f"模型预测: {prediction.value}")
 loss = eval_fn(inputs=dict(prediction=prediction, ground_truth_answer=answer))
 print(f"损失反馈: {loss.value}\n")
 
-print("--- TextualAdam优化过程 ---")
-loss.backward()
-optimizer.step()
+print("--- TextualAdam三轮优化过程 ---")
 
-print("\n--- 优化后预测 ---")
-print(f"优化后系统提示: {system_prompt.value}")
-prediction_after = model(question)
-print(f"优化后预测: {prediction_after.value}")
+# 进行三轮优化迭代
+for iteration in range(3):
+    print(f"\n=== 第 {iteration + 1} 轮优化 ===")
+    
+    # 前向推理并计算损失
+    prediction = model(question)
+    loss = eval_fn(inputs=dict(prediction=prediction, ground_truth_answer=answer))
+    print(f"当前预测: {prediction.value}")
+    print(f"当前损失: {loss.value}")
+    
+    # 反向传播计算梯度
+    optimizer.zero_grad()
+    loss.backward()
+    
+    # 打印梯度信息
+    gradient_text = system_prompt.get_gradient_text()
+    print(f"系统提示的梯度数量: {len(system_prompt.gradients)}")
+    if gradient_text:
+        print(f"梯度内容: {gradient_text}")
+    else:
+        print("暂无梯度信息")
+    
+    # 执行优化步骤
+    print("执行优化步骤...")
+    optimizer.step()
+    
+    print(f"优化后系统提示: {system_prompt.value}")
+
+print("\n--- 最终结果对比 ---")
+final_prediction = model(question)
+print(f"最终预测: {final_prediction.value}")
+final_loss = eval_fn(inputs=dict(prediction=final_prediction, ground_truth_answer=answer))
+print(f"最终损失: {final_loss.value}")
 
 print("\n=== TextualAdam优化器特性 ===")
 print("✅ 一阶动量: 追踪梯度反馈的语义方向一致性")
