@@ -72,14 +72,17 @@ class BaseOpenAIEngine(EngineLM, CachedEngine):
         system_prompt: str = None,
         temperature=0,
         max_tokens=2000,
-        top_p=0.99,
+        top_p=0,
     ):
         sys_prompt_arg = system_prompt if system_prompt else self.system_prompt
 
         cache_or_none = self._check_cache(sys_prompt_arg + prompt)
         if cache_or_none is not None:
+            # print("cache hit")
+            # print(sys_prompt_arg[:100], "\n", prompt[:100])
             return cache_or_none
-
+        # print("cache miss")
+        # print(sys_prompt_arg[:100], "\n", prompt[:100])
         response = self.client.chat.completions.create(
             model=self.model_string,
             messages=[
@@ -92,6 +95,7 @@ class BaseOpenAIEngine(EngineLM, CachedEngine):
             temperature=temperature,
             max_tokens=max_tokens,
             top_p=top_p,
+            seed= 42
         )
 
         response = response.choices[0].message.content
@@ -148,6 +152,7 @@ class BaseOpenAIEngine(EngineLM, CachedEngine):
             temperature=temperature,
             max_tokens=max_tokens,
             top_p=top_p,
+            seed=42,
         )
 
         response_text = response.choices[0].message.content

@@ -10,6 +10,8 @@ from textgrad.tasks import load_task
 import numpy as np
 import random
 
+from collections import defaultdict
+
 def set_seed(seed):
     np.random.seed(seed)
     random.seed(seed)
@@ -19,7 +21,7 @@ def config():
     parser.add_argument("--task", type=str, default="BBH_object_counting", help="The task to evaluate the model on.")
     parser.add_argument("--evaluation_engine", type=str, default="gpt-4o", help="The API to use for evaluation.")
     parser.add_argument("--test_engine", type=str, default="gpt-3.5-turbo-0125", help="The API to use for evaluation.")
-    parser.add_argument("--batch_size", type=int, default=3, help="The batch size to use for training.")
+    parser.add_argument("--batch_size", type=int, default=1, help="The batch size to use for training.")
     parser.add_argument("--max_epochs", type=int, default=1, help="The maximum number of epochs to train for.")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--run_validation", action="store_true", help="Whether to run validation or not.")
@@ -101,14 +103,8 @@ model_evaluation = tg.BlackboxLLM(llm_api_eval, system_prompt)
 #     reference = np.mean(eval_dataset(test_set, eval_fn, model_evaluation))
 
 
-system_prompt = tg.Variable(STARTING_SYSTEM_PROMPT, 
-                            requires_grad=True,
-                            role_description="structured system prompt to a somewhat capable language model that specifies the behavior and strategies for the QA task")
-model = tg.BlackboxLLM(llm_api_test, system_prompt)
 
-optimizer = tg.TextualGradientDescent(engine=llm_api_eval, parameters=[system_prompt])
-
-results = {"test_acc": [], "prompt": [], "validation_acc": []}
+results = {"test_acc": [], "prompt": [], "validation_acc": [], "rank": []}
 # results["test_acc"].append(eval_dataset(test_set, eval_fn, model))
 # results["validation_acc"].append(eval_dataset(val_set, eval_fn, model))
 results["prompt"].append(system_prompt.get_value())
@@ -117,7 +113,12 @@ results["prompt"].append(system_prompt.get_value())
 for epoch in range(args.max_epochs):
     for steps, (batch_x, batch_y) in enumerate((pbar := tqdm(train_loader, position=0))):
         pbar.set_description(f"Training step {steps}. Epoch {epoch}")
-        optimizer.zero_grad()
+        system_prompt = tg.Variable(STARTING_SYSTEM_PROMPT, 
+                requires_grad=True,
+                role_description="structured system prompt to a somewhat capable language model that specifies the behavior and strategies for the QA task")
+
+        model = tg.BlackboxLLM(llm_api_test, system_prompt)
+        optimizer = tg.TextualGradientDescent(engine=llm_api_eval, parameters=[system_prompt])
         losses = []
         for (x, y) in zip(batch_x, batch_y):
             x = tg.Variable(x, requires_grad=False, role_description="query to the language model")
@@ -134,12 +135,13 @@ for epoch in range(args.max_epochs):
         # if args.run_validation:
         #     run_validation_revert(system_prompt, results, model, eval_fn, val_set)
         # print("sys prompt: ", system_prompt)
-        # test_acc = eval_dataset(test_set, eval_fn, model)
-        # results["test_acc"].append(test_acc)
+        test_acc = eval_dataset(test_set, eval_fn, model)
+        results["test_acc"].append(test_acc)
         results["prompt"].append(system_prompt.get_value())
-        if steps == 1:
+        results["rank"].append((np.mean(test_acc), eval_output_variable.value, str(system_prompt.get_value()).split("."), x.value))
+        if steps == 50:
             break
-
+results["rank"].sort(reverse=True)
 # Also dump the final results
 import json
 with open(f"./figures/results_{args.task}_{args.test_engine}.json", "w") as f:
