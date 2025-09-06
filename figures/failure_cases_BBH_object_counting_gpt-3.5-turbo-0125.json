@@ -1,0 +1,57 @@
+[
+    [
+        "You will answer a reasoning question. Think step by step. The last line of your response should be of the following format: 'Answer: $VALUE' where VALUE is a numerical value.",
+        "I have a bed, a fridge, a lamp, a toaster, four chairs, and a table. How many objects do I have?",
+        "9"
+    ],
+    [
+        "You will answer a reasoning question. Think step by step. The last line of your response should be of the following format: 'Answer: $VALUE' where VALUE is a numerical value.",
+        "I have a stove, a bed, a lamp, three microwaves, a chair, a toaster, a table, two cars, a fridge, and an oven. How many objects do I have?",
+        "13"
+    ],
+    [
+        "You will answer a reasoning question. Think step by step. The last line of your response should be of the following format: 'Answer: $VALUE' where VALUE is a numerical value.",
+        "I have a bear, a dog, a cow, a cat, two pigs, a donkey, a fish, a frog, and two goats. How many animals do I have?",
+        "11"
+    ],
+    [
+        "You will answer a reasoning question. Think step by step. The last line of your response should be of the following format: 'Answer: $VALUE' where VALUE is a numerical value.",
+        "I have two heads of broccoli, an apple, a lettuce head, and two onions. How many vegetables do I have?",
+        "5"
+    ],
+    [
+        "You will answer a reasoning question. Think step by step. The last line of your response should be of the following format: 'Answer: $VALUE' where VALUE is a numerical value.",
+        "I have a couch, an oven, two microwaves, and a fridge. How many objects do I have?",
+        "5"
+    ],
+    [
+        "You will answer a reasoning question. Think step by step. The last line of your response should be of the following format: 'Answer: $VALUE' where VALUE is a numerical value.",
+        "I have a yam, a cauliflower, a garlic, two lettuce heads, a head of broccoli, a potato, a stalk of celery, and an onion. How many vegetables do I have?",
+        "9"
+    ],
+    [
+        "You will answer a reasoning question. Think step by step. The last line of your response should be of the following format: 'Answer: $VALUE' where VALUE is a numerical value.",
+        "I have a carrot, an onion, a stalk of celery, three yams, a garlic, a head of broccoli, and a potato. How many vegetables do I have?",
+        "9"
+    ],
+    [
+        "You will answer a reasoning question. Think step by step. The last line of your response should be of the following format: 'Answer: $VALUE' where VALUE is a numerical value.",
+        "I have a microwave, a table, a fridge, a stove, an oven, a toaster, a couch, and four cars. How many objects do I have?",
+        "11"
+    ],
+    [
+        "You will answer a reasoning question. Think step by step. The last line of your response should be of the following format: 'Answer: $VALUE' where VALUE is a numerical value.",
+        "I have a potato, a yam, two heads of broccoli, and a cauliflower. How many vegetables do I have?",
+        "5"
+    ],
+    [
+        "You will answer a reasoning question. Think step by step. The last line of your response should be of the following format: 'Answer: $VALUE' where VALUE is a numerical value.",
+        "I have a microwave, a lamp, four cars, a stove, a toaster, and a bed. How many objects do I have?",
+        "9"
+    ],
+    [
+        "You will answer a reasoning question. Think step by step. The last line of your response should be of the following format: 'Answer: $VALUE' where VALUE is a numerical value.",
+        "I have a yam, a cauliflower, a bed, two cabbages, a garlic, an oven, a carrot, a head of broccoli, a potato, a stalk of celery, a lettuce head, and a toaster. How many vegetables do I have?",
+        "10"
+    ]
+]
