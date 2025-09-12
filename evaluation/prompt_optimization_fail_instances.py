@@ -66,19 +66,25 @@ def eval_dataset(test_set, eval_fn, model, max_samples: int=None):
             tqdm_loader.set_description(f"Accuracy: {np.mean(accuracy_list)}")
     return accuracy_list 
 
-def run_validation_revert(system_prompt: tg.Variable, results, model, eval_fn, val_set):
-    val_performance = np.mean(eval_dataset(val_set, eval_fn, model))
-    previous_performance = np.mean(results["validation_acc"][-1])
-    print("val_performance: ", val_performance)
-    print("previous_performance: ", previous_performance)
-    previous_prompt = results["prompt"][-1]
+def evaluate_single_sample(sample, prompt, model_engine, eval_fn):
+    """Evaluate a single sample with given prompt"""
+    x, y = sample
+    # Create temporary model with given prompt
+    temp_prompt = tg.Variable(prompt, requires_grad=False, role_description="temporary prompt for evaluation")
+    temp_model = tg.BlackboxLLM(model_engine, temp_prompt)
     
-    if val_performance < previous_performance:
-        print(f"rejected prompt: {system_prompt.value}")
-        system_prompt.set_value(previous_prompt)
-        val_performance = previous_performance
+    x_var = tg.Variable(x, requires_grad=False, role_description="query to the language model")
+    y_var = tg.Variable(y, requires_grad=False, role_description="correct answer for the query")
+    response = temp_model(x_var)
+    
+    try:
+        eval_output_variable = eval_fn(inputs=dict(prediction=response, ground_truth_answer=y_var))
+        return int(eval_output_variable.value)
+    except:
+        eval_output_variable = eval_fn([x_var, y_var, response])
+        eval_output_parsed = eval_fn.parse_output(eval_output_variable)
+        return int(eval_output_parsed)
 
-    results["validation_acc"].append(val_performance)
 
 
 set_seed(args.seed)
@@ -150,25 +156,6 @@ results["test_acc"].append([int(x) for x in initial_test_acc])  # Convert numpy 
 # results["validation_acc"].append(eval_dataset(val_set, eval_fn, model))
 results["prompt"].append(system_prompt.get_value())
 
-
-def evaluate_single_sample(sample, prompt, model_engine, eval_fn):
-    """Evaluate a single sample with given prompt"""
-    x, y = sample
-    # Create temporary model with given prompt
-    temp_prompt = tg.Variable(prompt, requires_grad=False, role_description="temporary prompt for evaluation")
-    temp_model = tg.BlackboxLLM(model_engine, temp_prompt)
-    
-    x_var = tg.Variable(x, requires_grad=False, role_description="query to the language model")
-    y_var = tg.Variable(y, requires_grad=False, role_description="correct answer for the query")
-    response = temp_model(x_var)
-    
-    try:
-        eval_output_variable = eval_fn(inputs=dict(prediction=response, ground_truth_answer=y_var))
-        return int(eval_output_variable.value)
-    except:
-        eval_output_variable = eval_fn([x_var, y_var, response])
-        eval_output_parsed = eval_fn.parse_output(eval_output_variable)
-        return int(eval_output_parsed)
 
 def evaluate_on_sample_set(sample_set, prompt, model_engine, eval_fn):
     """Evaluate model performance on a sample set with given prompt using multithreading"""

@@ -75,9 +75,9 @@ class GSM8K_DSPy(GSM8K):
         rng.shuffle(official_train)
         rng = random.Random(0)
         rng.shuffle(official_test)
-        trainset = official_train[:200]
-        devset = official_train[200:500]
-        testset = official_test[:]
+        trainset = official_train[:50]
+        devset = official_train[50:100]
+        testset = official_test[100:200]
         if split == "train":
             self.data = trainset
         elif split == "val":

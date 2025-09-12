@@ -1,6 +1,7 @@
 from .mmlu import MMLU, MMLUInstanceDataset
 from .base import Dataset, DataLoader
 from .leetcode import LeetCodeHardEval
+from .logiqa2 import LogiQA2, LogiQA2InstanceDataset
 
 from typing import Tuple, Callable
 from textgrad import Variable
@@ -15,8 +16,9 @@ AVAILABLE_DATASETS = [
 AVAILABLE_INSTANCE_DATASETS = [
     "MMLU_machine_learning",
     "MMLU_college_physics",
-    "GPQA_diamond"
-    "LeetCodeHardEval"
+    "GPQA_diamond",
+    "LeetCodeHardEval",
+    "LogiQA2"
 ]
 
 def load_task(task_name: str, evaluation_api: EngineLM, *args, **kwargs) -> Tuple[Dataset, Dataset, Callable]:
@@ -101,5 +103,8 @@ def load_instance_task(task_name: str, evaluation_api: EngineLM, *args, **kwargs
     elif task_name in ["LeetCodeHardEval"]:
         dataset = LeetCodeHardEval()
         return dataset
+    elif task_name == "LogiQA2":
+        test_set = LogiQA2InstanceDataset(evaluation_api=evaluation_api, split="test", *args, **kwargs)
+        return test_set
     else:
         raise ValueError(f"Instance task {task_name} not found.")
