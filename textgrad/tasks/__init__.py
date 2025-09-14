@@ -2,6 +2,7 @@ from .mmlu import MMLU, MMLUInstanceDataset
 from .base import Dataset, DataLoader
 from .leetcode import LeetCodeHardEval
 from .logiqa2 import LogiQA2, LogiQA2InstanceDataset
+from .strategyqa import StrategyQA, StrategyQAInstanceDataset
 
 from typing import Tuple, Callable
 from textgrad import Variable
@@ -11,6 +12,7 @@ AVAILABLE_DATASETS = [
     "BBH_object_counting",
     "BBH_word_sorting",
     "GSM8K_DSPy",
+    "StrategyQA",
 ]
 
 AVAILABLE_INSTANCE_DATASETS = [
@@ -18,7 +20,8 @@ AVAILABLE_INSTANCE_DATASETS = [
     "MMLU_college_physics",
     "GPQA_diamond",
     "LeetCodeHardEval",
-    "LogiQA2"
+    "LogiQA2",
+    "StrategyQA"
 ]
 
 def load_task(task_name: str, evaluation_api: EngineLM, *args, **kwargs) -> Tuple[Dataset, Dataset, Callable]:
@@ -87,6 +90,17 @@ def load_task(task_name: str, evaluation_api: EngineLM, *args, **kwargs) -> Tupl
         eval_fn = StringBasedFunction(string_based_equality_fn, function_purpose=fn_purpose)
         return train_set, val_set, test_set, eval_fn
     
+    elif task_name == "StrategyQA":
+        from textgrad.tasks.strategyqa import StrategyQA, string_based_equality_fn
+        from textgrad.autograd.string_based_ops import StringBasedFunction
+        
+        train_set = StrategyQA(split="train[:50]", *args, **kwargs)
+        val_set = StrategyQA(split="train[50:150]", *args, **kwargs)  
+        test_set = StrategyQA(split="train[150:250]", *args, **kwargs)
+        
+        fn_purpose = "String-based function that extracts Answer: True/False from model response and compares with ground truth boolean."
+        eval_fn = StringBasedFunction(string_based_equality_fn, function_purpose=fn_purpose)
+        return train_set, val_set, test_set, eval_fn
     else:
         raise ValueError(f"Task {task_name} not found.")
 
@@ -105,6 +119,9 @@ def load_instance_task(task_name: str, evaluation_api: EngineLM, *args, **kwargs
         return dataset
     elif task_name == "LogiQA2":
         test_set = LogiQA2InstanceDataset(evaluation_api=evaluation_api, split="test", *args, **kwargs)
+        return test_set
+    elif task_name == "StrategyQA":
+        test_set = StrategyQAInstanceDataset(evaluation_api=evaluation_api, split="train", *args, **kwargs)
         return test_set
     else:
         raise ValueError(f"Instance task {task_name} not found.")
