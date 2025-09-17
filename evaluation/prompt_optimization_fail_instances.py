@@ -340,10 +340,10 @@ for epoch in range(args.max_epochs):
         
         print(f"Test accuracy: {current_acc:.2%}")
         
-        if steps >= 10:  # Limit steps
+        if steps >= 11:  # Limit steps
             break
 
 # Also dump the final results
 
-with open(f"./figures/results_{args.task}_{args.test_engine}.json", "w") as f:
+with open(f"./figures/textRegu_{args.task}_{args.test_engine}.json", "w") as f:
     json.dump(results, f)

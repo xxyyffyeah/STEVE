@@ -16,12 +16,12 @@ def set_seed(seed):
 
 def config():
     parser = argparse.ArgumentParser(description="Optimize a prompt for a task.")
-    parser.add_argument("--task", type=str, default="BBH_object_counting", help="The task to evaluate the model on.")
+    parser.add_argument("--task", type=str, default="StrategyQA", help="The task to evaluate the model on.")
     parser.add_argument("--evaluation_engine", type=str, default="gpt-4o", help="The API to use for evaluation.")
     parser.add_argument("--test_engine", type=str, default="gpt-3.5-turbo-0125", help="The API to use for evaluation.")
-    parser.add_argument("--batch_size", type=int, default=1, help="The batch size to use for training.")
-    parser.add_argument("--max_epochs", type=int, default=1, help="The maximum number of epochs to train for.")
-    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--batch_size", type=int, default=3, help="The batch size to use for training.")
+    parser.add_argument("--max_epochs", type=int, default=3, help="The maximum number of epochs to train for.")
+    parser.add_argument("--seed", type=int, default=44)
     parser.add_argument("--run_validation", action="store_true", help="Whether to run validation or not.")
     parser.add_argument("--do_not_run_larger_model", action="store_true", help="Whether to run the larger model or not.")
     parser.add_argument("--num_threads", type=int, default=32, help="The number of threads to use for evaluation.")
@@ -131,9 +131,9 @@ for epoch in range(args.max_epochs):
         total_loss = tg.sum(losses)
         total_loss.backward()
         optimizer.step()
-        # if args.run_validation:
-        #     run_validation_revert(system_prompt, results, model, eval_fn, val_set)
-        # print("sys prompt: ", system_prompt)
+        if args.run_validation:
+            run_validation_revert(system_prompt, results, model, eval_fn, val_set)
+        print("sys prompt: ", system_prompt)
         test_acc = eval_dataset(test_set, eval_fn, model)
         results["test_acc"].append(test_acc)
         results["prompt"].append(system_prompt.get_value())
