@@ -1,0 +1,35 @@
+[
+  {
+    "name": "StrategyQA_1",
+    "returncode": 0,
+    "seconds": 21.919363975524902,
+    "log": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_logs/StrategyQA_1.log",
+    "artifacts": [
+      "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/StrategyQA_1/results_StrategyQA_gpt-4o_gpt-3.5-turbo-0125.json"
+    ],
+    "run_dir": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/StrategyQA_1"
+  },
+  {
+    "name": "StrategyQA_2",
+    "returncode": 0,
+    "seconds": 240.99123001098633,
+    "log": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_logs/StrategyQA_2.log",
+    "artifacts": [
+      "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/StrategyQA_2/results_StrategyQA_gemini-2.5-flash_gpt-3.5-turbo-0125.json",
+      "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/StrategyQA_2/results_StrategyQA_gpt-4o_gpt-3.5-turbo-0125.json"
+    ],
+    "run_dir": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/StrategyQA_2"
+  },
+  {
+    "name": "StrategyQA_3",
+    "returncode": 0,
+    "seconds": 390.1360399723053,
+    "log": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_logs/StrategyQA_3.log",
+    "artifacts": [
+      "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/StrategyQA_3/results_StrategyQA_gpt-5_gpt-3.5-turbo-0125.json",
+      "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/StrategyQA_3/results_StrategyQA_gemini-2.5-flash_gpt-3.5-turbo-0125.json",
+      "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/StrategyQA_3/results_StrategyQA_gpt-4o_gpt-3.5-turbo-0125.json"
+    ],
+    "run_dir": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/StrategyQA_3"
+  }
+]

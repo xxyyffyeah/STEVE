@@ -177,12 +177,22 @@ class TextualGradientDescent(Optimizer):
             prompt_update_parameter = self._update_prompt(parameter)
             new_text = self.engine(prompt_update_parameter, system_prompt=self.optimizer_system_prompt)
             logger.info(f"TextualGradientDescent optimizer response", extra={"optimizer.response": new_text})
+            tag_start, tag_end = self.new_variable_tags
+            if tag_start not in new_text or tag_end not in new_text:
+                logger.warning(
+                    "TextualGradientDescent optimizer response missing tags",
+                    extra={"optimizer.response": new_text},
+                )
+                continue
             try:
-                new_value = new_text.split(self.new_variable_tags[0])[1].split(self.new_variable_tags[1])[0].strip()
+                new_value = new_text.split(tag_start)[1].split(tag_end)[0].strip()
             # Check if we got a cannot be indexed error
             except IndexError:
-                logger.error(f"TextualGradientDescent optimizer response could not be indexed", extra={"optimizer.response": new_text})
-                raise IndexError(f"TextualGradientDescent optimizer response could not be indexed. This can happen if the optimizer model cannot follow the instructions. You can try using a stronger model, or somehow reducing the context of the optimization. Response: {new_text}")
+                logger.warning(
+                    "TextualGradientDescent optimizer response could not be indexed",
+                    extra={"optimizer.response": new_text},
+                )
+                continue
             parameter.set_value(new_value)
             logger.info(f"TextualGradientDescent updated text", extra={"parameter.value": parameter.value})
             if self.verbose:

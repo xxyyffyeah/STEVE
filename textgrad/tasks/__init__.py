@@ -137,10 +137,16 @@ def load_task(task_name: str, evaluation_api: EngineLM, *args, **kwargs) -> Tupl
                     self._task_description = "You will answer multiple-choice questions. Think step by step."
 
             def __len__(self):
+                # Length strictly equals the slice width; prevents iterating beyond the slice
                 return max(0, self.end - self.start)
 
             def __getitem__(self, idx):
-                return self.base[self.start + int(idx)]
+                # Enforce slice bounds so we never touch items outside [start, end)
+                i = int(idx)
+                if i < 0 or i >= (self.end - self.start):
+                    raise IndexError("_SlicedDataset index out of range")
+                j = self.start + i
+                return self.base[j]
 
             def get_task_description(self):
                 return self._task_description

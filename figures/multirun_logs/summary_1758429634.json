@@ -1,0 +1,26 @@
+[
+  {
+    "name": "MMLU-college_physics_3",
+    "returncode": 1,
+    "seconds": 1.2072839736938477,
+    "log": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_logs/MMLU-college_physics_3.log",
+    "artifacts": [],
+    "run_dir": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/MMLU-college_physics_3"
+  },
+  {
+    "name": "MMLU-college_physics_1",
+    "returncode": 1,
+    "seconds": 1.208575963973999,
+    "log": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_logs/MMLU-college_physics_1.log",
+    "artifacts": [],
+    "run_dir": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/MMLU-college_physics_1"
+  },
+  {
+    "name": "MMLU-college_physics_2",
+    "returncode": 1,
+    "seconds": 1.4202909469604492,
+    "log": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_logs/MMLU-college_physics_2.log",
+    "artifacts": [],
+    "run_dir": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/MMLU-college_physics_2"
+  }
+]

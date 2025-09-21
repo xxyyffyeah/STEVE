@@ -1,0 +1,777 @@
+{
+    "test_acc": [
+        [
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+        ],
+        [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+        ],
+        [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0
+        ],
+        [
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+        ],
+        [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+        ],
+        [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+        ],
+        [
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0
+        ],
+        [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+        ],
+        [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+        ],
+        [
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+        ],
+        [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+        ],
+        [
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+        ],
+        [
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0
+        ]
+    ],
+    "prompt": [
+        "You will answer multiple-choice questions. Think step by step. The goal is to select the correct final answer from the choices.",
+        "You will answer multiple-choice questions. Think step by step. Verify the formulas you use against known principles before applying them. Detail each calculation step, including unit conversions and arithmetic operations, to ensure accuracy. Ensure all units are consistent and correctly converted throughout the calculations. After calculating, verify the result against the given choices and typical values to ensure it is reasonable. Perform an error analysis or sanity check to compare the result with typical values. Provide a concise summary of the key steps and results to quickly identify potential errors. If the initial result does not match the expected answer, re-evaluate the steps and calculations to identify and correct any errors. The goal is to select the correct final answer from the choices and provide a clear and concise explanation of the reasoning process.",
+        "You will answer multiple-choice questions. Think step by step. Verify the formulas you use against known principles before applying them. Detail each calculation step, including unit conversions and arithmetic operations, to ensure accuracy. Ensure all units are consistent and correctly converted throughout the calculations. After calculating, verify the result against the given choices and typical values to ensure it is reasonable. Perform an error analysis or sanity check to compare the result with typical values. Provide a concise summary of the key steps and results to quickly identify potential errors. If the initial result does not match the expected answer, re-evaluate the steps and calculations to identify and correct any errors. The goal is to select the correct final answer from the choices and provide a clear and concise explanation of the reasoning process.",
+        "You will answer multiple-choice questions. Think step by step. Verify the formulas you use against known principles before applying them. Detail each calculation step, including unit conversions and arithmetic operations, to ensure accuracy. Ensure all units are consistent and correctly converted throughout the calculations. After calculating, verify the result against the given choices and typical values to ensure it is reasonable. Perform an error analysis or sanity check to compare the result with typical values. Provide a concise summary of the key steps and results to quickly identify potential errors. If the initial result does not match the expected answer, re-evaluate the steps and calculations to identify and correct any errors. The goal is to select the correct final answer from the choices and provide a clear and concise explanation of the reasoning process.",
+        "You will answer multiple-choice questions. Think step by step. Begin by identifying and stating any assumptions or simplifications commonly used in the problem context, such as neglecting negligible terms. Verify the formulas you use against known principles before applying them, and interpret them in the context of typical scenarios. Apply relevant laws or principles sequentially, using the result of each step as the input for the next. Detail each calculation step, including unit conversions and arithmetic operations, to ensure accuracy. Ensure all units are consistent and correctly converted throughout the calculations. Emphasize the importance of breaking down the problem into intermediate steps and explicitly stating the results of each step. After calculating, verify the result against the given choices and typical values to ensure it is reasonable. Perform an error analysis or sanity check after each major calculation step to compare the result with typical values and identify potential sources of error. Provide a concise summary of the key steps and results to quickly identify potential errors. If the initial result does not match the expected answer, re-evaluate the steps and calculations to identify and correct any errors. Highlight logical consistency by ensuring that each step logically follows from the previous one and that the final answer is consistent with the initial conditions and known principles. Provide brief educational insights or context when applicable, such as explaining relevant laws or principles to enhance understanding and justify the reasoning process. The goal is to select the correct final answer from the choices and provide a clear and concise explanation of the reasoning process, including a detailed justification for the selected answer choice and consideration of all other choices.",
+        "You will answer multiple-choice questions. Think step by step. Start by briefly outlining the relevant laws or principles to set the context. Identify and state any assumptions or simplifications commonly used in the problem context, such as neglecting negligible terms. Verify the formulas you use against known principles and ensure they align with the units provided in the problem statement. Apply relevant laws or principles sequentially, using the result of each step as the input for the next. Focus on summarizing key results and maintaining a logical flow in your reasoning. Ensure all units are consistent and correctly converted only if explicitly required by the problem. Perform error checking and sanity checks at key stages of the calculation, comparing intermediate results with typical values to identify potential errors. Provide a concise summary of the key steps and results to quickly identify potential errors. If the initial result does not match the expected answer, re-evaluate the steps and calculations to identify and correct any errors. Conclude by comparing the calculated result with the answer choices and providing a clear, concise conclusion. When applicable, provide brief educational insights or context directly relevant to the problem to enhance understanding. The goal is to select the correct final answer from the choices and provide a clear and concise explanation of the reasoning process, including a detailed justification for the selected answer choice and consideration of all other choices.",
+        "You will answer multiple-choice questions. Think step by step. Start by briefly outlining the relevant laws or principles to set the context, and identify when relativistic physics is applicable, using appropriate formulas such as the relativistic Doppler shift formula. Identify and state any assumptions or simplifications commonly used in the problem context, such as neglecting negligible terms. Verify the formulas you use against known principles and ensure they align with the units provided in the problem statement. Apply relevant laws or principles sequentially, using the result of each step as the input for the next. Focus on summarizing key results and maintaining a logical flow in your reasoning. Ensure all units are consistent and correctly converted only if explicitly required by the problem. Perform error checking and sanity checks at key stages of the calculation, comparing intermediate results with typical values to identify potential errors. Cross-reference results with established physical principles to ensure they are physically plausible. Provide a concise summary of the key steps and results to quickly identify potential errors. If the initial result does not match the expected answer, re-evaluate the steps and calculations to identify and correct any errors. Conclude by comparing the calculated result with the answer choices and providing a clear, concise conclusion. Evaluate all answer choices, providing a rationale for why the selected choice is correct while others are not. When applicable, provide brief educational insights or context directly relevant to the problem to enhance understanding. The goal is to select the correct final answer from the choices and provide a clear and concise explanation of the reasoning process, including a detailed justification for the selected answer choice and consideration of all other choices.",
+        "You will answer multiple-choice questions. Think step by step. Start by briefly outlining the relevant laws or principles to set the context, and identify when relativistic physics is applicable, using appropriate formulas such as the relativistic Doppler shift formula. Identify and state any assumptions or simplifications commonly used in the problem context, such as neglecting negligible terms. Verify the formulas you use against known principles and ensure they align with the units provided in the problem statement. Apply relevant laws or principles sequentially, using the result of each step as the input for the next. Focus on summarizing key results and maintaining a logical flow in your reasoning. Ensure all units are consistent and correctly converted only if explicitly required by the problem. Perform error checking and sanity checks at key stages of the calculation, comparing intermediate results with typical values to identify potential errors. Cross-reference results with established physical principles to ensure they are physically plausible. Provide a concise summary of the key steps and results to quickly identify potential errors. If the initial result does not match the expected answer, re-evaluate the steps and calculations to identify and correct any errors. Conclude by comparing the calculated result with the answer choices and providing a clear, concise conclusion. Evaluate all answer choices, providing a rationale for why the selected choice is correct while others are not. When applicable, provide brief educational insights or context directly relevant to the problem to enhance understanding. The goal is to select the correct final answer from the choices and provide a clear and concise explanation of the reasoning process, including a detailed justification for the selected answer choice and consideration of all other choices.",
+        "You will answer multiple-choice questions. Think step by step. Start by identifying the type of connection (series or parallel) and outline the relevant laws or principles, such as charge conservation and the relationship between charge, voltage, and capacitance. Clearly state any assumptions or simplifications, and verify the applicability of formulas against known principles and the problem context. Apply relevant laws sequentially, ensuring each step logically follows from the previous one. Focus on summarizing key results and maintaining a logical flow in your reasoning. Ensure all units are consistent and correctly converted only if explicitly required by the problem. Perform error checking and sanity checks at key stages, comparing intermediate results with typical values to identify potential errors. Cross-reference results with established physical principles to ensure they are physically plausible. Provide a concise summary of the key steps and results to quickly identify potential errors. Conclude with a clear statement of the predicted answer, compare it to the provided choices, and provide a rationale for why the selected choice is correct while others are not. When applicable, provide brief educational insights directly relevant to the problem to enhance understanding. The goal is to select the correct final answer from the choices and provide a clear and concise explanation of the reasoning process, including a detailed justification for the selected answer choice and consideration of all other choices.",
+        "You will answer multiple-choice questions. Think step by step. Start by identifying the type of connection (series or parallel) and outline the relevant laws or principles, such as charge conservation and the relationship between charge, voltage, and capacitance. Clearly state any assumptions or simplifications, and verify the applicability of formulas against known principles and the problem context. Apply relevant laws sequentially, ensuring each step logically follows from the previous one. Focus on summarizing key results and maintaining a logical flow in your reasoning. Ensure all units are consistent and correctly converted only if explicitly required by the problem. Perform error checking and sanity checks at key stages, comparing intermediate results with typical values to identify potential errors. Cross-reference results with established physical principles to ensure they are physically plausible. Provide a concise summary of the key steps and results to quickly identify potential errors. Conclude with a clear statement of the predicted answer, compare it to the provided choices, and provide a rationale for why the selected choice is correct while others are not. When applicable, provide brief educational insights directly relevant to the problem to enhance understanding. The goal is to select the correct final answer from the choices and provide a clear and concise explanation of the reasoning process, including a detailed justification for the selected answer choice and consideration of all other choices. Explicitly apply conservation laws, including energy and momentum, and consider all particles involved in interactions. Perform detailed energy calculations, including rest mass and kinetic energy, and account for relativistic effects when necessary. Clearly state assumptions and simplifications, and provide educational insights on complex concepts to enhance understanding.",
+        "You will answer multiple-choice questions. Think step by step. Start by identifying the type of connection (series or parallel) and outline the relevant laws or principles, such as charge conservation and the relationship between charge, voltage, and capacitance. Clearly state any assumptions or simplifications, and verify the applicability of formulas against known principles and the problem context. Apply relevant laws sequentially, ensuring each step logically follows from the previous one. Focus on summarizing key results and maintaining a logical flow in your reasoning. Ensure all units are consistent and correctly converted only if explicitly required by the problem. Perform error checking and sanity checks at key stages, comparing intermediate results with typical values to identify potential errors. Cross-reference results with established physical principles to ensure they are physically plausible. Provide a concise summary of the key steps and results to quickly identify potential errors. Conclude with a clear statement of the predicted answer, compare it to the provided choices, and provide a rationale for why the selected choice is correct while others are not. When applicable, provide brief educational insights directly relevant to the problem to enhance understanding. The goal is to select the correct final answer from the choices and provide a clear and concise explanation of the reasoning process, including a detailed justification for the selected answer choice and consideration of all other choices. Explicitly apply conservation laws, including energy and momentum, and consider all particles involved in interactions. Perform detailed energy calculations, including rest mass and kinetic energy, and account for relativistic effects when necessary. Clearly state assumptions and simplifications, and provide educational insights on complex concepts to enhance understanding.",
+        "You will answer multiple-choice questions. Think step by step. Start by identifying the type of connection (series or parallel) and outline the relevant laws or principles, such as charge conservation and the relationship between charge, voltage, and capacitance. Clearly state any assumptions or simplifications, and verify the applicability of formulas against known principles and the problem context. Apply relevant laws sequentially, ensuring each step logically follows from the previous one. Focus on summarizing key results and maintaining a logical flow in your reasoning. Ensure all units are consistent and correctly converted only if explicitly required by the problem. Perform error checking and sanity checks at key stages, comparing intermediate results with typical values to identify potential errors. Cross-reference results with established physical principles to ensure they are physically plausible. Provide a concise summary of the key steps and results to quickly identify potential errors. Conclude with a clear statement of the predicted answer, compare it to the provided choices, and provide a rationale for why the selected choice is correct while others are not. When applicable, provide brief educational insights directly relevant to the problem to enhance understanding. The goal is to select the correct final answer from the choices and provide a clear and concise explanation of the reasoning process, including a detailed justification for the selected answer choice and consideration of all other choices. Explicitly apply conservation laws, including energy and momentum, and consider all particles involved in interactions. Perform detailed energy calculations, including rest mass and kinetic energy, and account for relativistic effects when necessary. Clearly state assumptions and simplifications, and provide educational insights on complex concepts to enhance understanding.",
+        "You will answer multiple-choice questions. Think step by step. Start by identifying the type of connection (series or parallel) and outline the relevant laws or principles, such as charge conservation and the relationship between charge, voltage, and capacitance. Clearly state any assumptions or simplifications, and verify the applicability of formulas against known principles and the problem context. Apply relevant laws sequentially, ensuring each step logically follows from the previous one. Focus on summarizing key results and maintaining a logical flow in your reasoning. Ensure all units are consistent and correctly converted only if explicitly required by the problem. Perform error checking and sanity checks at key stages, comparing intermediate results with typical values to identify potential errors. Cross-reference results with established physical principles to ensure they are physically plausible. Provide a concise summary of the key steps and results to quickly identify potential errors. Conclude with a clear statement of the predicted answer, compare it to the provided choices, and provide a rationale for why the selected choice is correct while others are not. When applicable, provide brief educational insights directly relevant to the problem to enhance understanding. The goal is to select the correct final answer from the choices and provide a clear and concise explanation of the reasoning process, including a detailed justification for the selected answer choice and consideration of all other choices. Explicitly apply conservation laws, including energy and momentum, and consider all particles involved in interactions. Perform detailed energy calculations, including rest mass and kinetic energy, and account for relativistic effects when necessary. Clearly state assumptions and simplifications, and provide educational insights on complex concepts to enhance understanding."
+    ],
+    "validation_acc": [],
+    "rank": [
+        {
+            "step": 1,
+            "mean_accuracy": 0.6666666666666666,
+            "n_preserve_cases": 60,
+            "n_hard_cases": 42,
+            "train_accuracy": 0.5882352941176471,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": 0.22738095238095235,
+            "best_improvement": 0.4523809523809524,
+            "best_regression": 0.15000000000000002,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step. The goal is to select the correct final answer from the choices.",
+            "final_prompt": "You will answer multiple-choice questions. Think step by step. Verify the formulas you use against known principles before applying them. Detail each calculation step, including unit conversions and arithmetic operations, to ensure accuracy. Ensure all units are consistent and correctly converted throughout the calculations. After calculating, verify the result against the given choices and typical values to ensure it is reasonable. Perform an error analysis or sanity check to compare the result",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.22738095238095235,
+                    "improvement": 0.4523809523809524,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.4095238095238096,
+                    "improvement": 0.19047619047619047,
+                    "regression": 0.4,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -1.1761904761904765,
+                    "improvement": 0.023809523809523808,
+                    "regression": 0.8,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 2,
+            "mean_accuracy": 0.6666666666666666,
+            "n_preserve_cases": 71,
+            "n_hard_cases": 31,
+            "train_accuracy": 0.696078431372549,
+            "n_candidates": 3,
+            "best_candidate_id": 3,
+            "best_selection_score": -0.020161290322580627,
+            "best_improvement": 0.3548387096774194,
+            "best_regression": 0.25,
+            "accepted": false,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step. Verify the formulas you use against known principles before applying them. Detail each calculation step, including unit conversions and arithmetic operations, to ensure accuracy. Ensure all units are consistent and correctly converted throughout the calculations. After calculating, verify the result against the given choices and typical values to ensure it is reasonable. Perform an error analysis or sanity check to compare the result",
+            "final_prompt": "You will answer multiple-choice questions. Think step by step. Verify the formulas you use against known principles before applying them. Detail each calculation step, including unit conversions and arithmetic operations, to ensure accuracy. Ensure all units are consistent and correctly converted throughout the calculations. After calculating, verify the result against the given choices and typical values to ensure it is reasonable. Perform an error analysis or sanity check to compare the result",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.2346774193548386,
+                    "improvement": 0.2903225806451613,
+                    "regression": 0.35,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.08467741935483869,
+                    "improvement": 0.2903225806451613,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.020161290322580627,
+                    "improvement": 0.3548387096774194,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 3,
+            "mean_accuracy": 0.6666666666666666,
+            "n_preserve_cases": 71,
+            "n_hard_cases": 31,
+            "train_accuracy": 0.696078431372549,
+            "n_candidates": 3,
+            "best_candidate_id": 2,
+            "best_selection_score": -0.04193548387096768,
+            "best_improvement": 0.25806451612903225,
+            "best_regression": 0.19999999999999996,
+            "accepted": false,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step. Verify the formulas you use against known principles before applying them. Detail each calculation step, including unit conversions and arithmetic operations, to ensure accuracy. Ensure all units are consistent and correctly converted throughout the calculations. After calculating, verify the result against the given choices and typical values to ensure it is reasonable. Perform an error analysis or sanity check to compare the result",
+            "final_prompt": "You will answer multiple-choice questions. Think step by step. Verify the formulas you use against known principles before applying them. Detail each calculation step, including unit conversions and arithmetic operations, to ensure accuracy. Ensure all units are consistent and correctly converted throughout the calculations. After calculating, verify the result against the given choices and typical values to ensure it is reasonable. Perform an error analysis or sanity check to compare the result",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.3524193548387096,
+                    "improvement": 0.3225806451612903,
+                    "regression": 0.44999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.04193548387096768,
+                    "improvement": 0.25806451612903225,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.11693548387096775,
+                    "improvement": 0.25806451612903225,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 4,
+            "mean_accuracy": 0.47619047619047616,
+            "n_preserve_cases": 71,
+            "n_hard_cases": 31,
+            "train_accuracy": 0.696078431372549,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": 0.354032258064516,
+            "best_improvement": 0.12903225806451615,
+            "best_regression": -0.1499999999999999,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step. Verify the formulas you use against known principles before applying them. Detail each calculation step, including unit conversions and arithmetic operations, to ensure accuracy. Ensure all units are consistent and correctly converted throughout the calculations. After calculating, verify the result against the given choices and typical values to ensure it is reasonable. Perform an error analysis or sanity check to compare the result",
+            "final_prompt": "You will answer multiple-choice questions. Think step by step. Begin by identifying and stating any assumptions or simplifications commonly used in the problem context, such as neglecting negligible terms. Verify the formulas you use against known principles before applying them, and interpret them in the context of typical scenarios. Apply relevant laws or principles sequentially, using the result of each step as the input for the next. Detail each calculation step, including unit conversions a",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.354032258064516,
+                    "improvement": 0.12903225806451615,
+                    "regression": -0.1499999999999999,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.06370967741935488,
+                    "improvement": 0.16129032258064516,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": 0.19354838709677422,
+                    "improvement": 0.19354838709677422,
+                    "regression": 0.0,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 5,
+            "mean_accuracy": 0.5238095238095238,
+            "n_preserve_cases": 57,
+            "n_hard_cases": 45,
+            "train_accuracy": 0.5588235294117647,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": 0.10277777777777772,
+            "best_improvement": 0.17777777777777778,
+            "best_regression": 0.050000000000000044,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step. Begin by identifying and stating any assumptions or simplifications commonly used in the problem context, such as neglecting negligible terms. Verify the formulas you use against known principles before applying them, and interpret them in the context of typical scenarios. Apply relevant laws or principles sequentially, using the result of each step as the input for the next. Detail each calculation step, including unit conversions a",
+            "final_prompt": "You will answer multiple-choice questions. Think step by step. Start by briefly outlining the relevant laws or principles to set the context. Identify and state any assumptions or simplifications commonly used in the problem context, such as neglecting negligible terms. Verify the formulas you use against known principles and ensure they align with the units provided in the problem statement. Apply relevant laws or principles sequentially, using the result of each step as the input for the next.",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.10277777777777772,
+                    "improvement": 0.17777777777777778,
+                    "regression": 0.050000000000000044,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.09444444444444447,
+                    "improvement": 0.24444444444444444,
+                    "regression": 0.09999999999999998,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.10833333333333334,
+                    "improvement": 0.26666666666666666,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 6,
+            "mean_accuracy": 0.5238095238095238,
+            "n_preserve_cases": 56,
+            "n_hard_cases": 46,
+            "train_accuracy": 0.5490196078431373,
+            "n_candidates": 3,
+            "best_candidate_id": 2,
+            "best_selection_score": 0.023913043478260898,
+            "best_improvement": 0.17391304347826086,
+            "best_regression": 0.09999999999999998,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step. Start by briefly outlining the relevant laws or principles to set the context. Identify and state any assumptions or simplifications commonly used in the problem context, such as neglecting negligible terms. Verify the formulas you use against known principles and ensure they align with the units provided in the problem statement. Apply relevant laws or principles sequentially, using the result of each step as the input for the next.",
+            "final_prompt": "You will answer multiple-choice questions. Think step by step. Start by briefly outlining the relevant laws or principles to set the context, and identify when relativistic physics is applicable, using appropriate formulas such as the relativistic Doppler shift formula. Identify and state any assumptions or simplifications commonly used in the problem context, such as neglecting negligible terms. Verify the formulas you use against known principles and ensure they align with the units provided i",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.021739130434782622,
+                    "improvement": -0.021739130434782622,
+                    "regression": 0.0,
+                    "source": "current_prompt_batch_solved"
+                },
+                {
+                    "id": 2,
+                    "score": 0.023913043478260898,
+                    "improvement": 0.17391304347826086,
+                    "regression": 0.09999999999999998,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.09456521739130441,
+                    "improvement": 0.13043478260869562,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 7,
+            "mean_accuracy": 0.5238095238095238,
+            "n_preserve_cases": 60,
+            "n_hard_cases": 42,
+            "train_accuracy": 0.5882352941176471,
+            "n_candidates": 3,
+            "best_candidate_id": 3,
+            "best_selection_score": -0.13690476190476192,
+            "best_improvement": 0.23809523809523808,
+            "best_regression": 0.25,
+            "accepted": false,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step. Start by briefly outlining the relevant laws or principles to set the context, and identify when relativistic physics is applicable, using appropriate formulas such as the relativistic Doppler shift formula. Identify and state any assumptions or simplifications commonly used in the problem context, such as neglecting negligible terms. Verify the formulas you use against known principles and ensure they align with the units provided i",
+            "final_prompt": "You will answer multiple-choice questions. Think step by step. Start by briefly outlining the relevant laws or principles to set the context, and identify when relativistic physics is applicable, using appropriate formulas such as the relativistic Doppler shift formula. Identify and state any assumptions or simplifications commonly used in the problem context, such as neglecting negligible terms. Verify the formulas you use against known principles and ensure they align with the units provided i",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.2357142857142858,
+                    "improvement": 0.21428571428571427,
+                    "regression": 0.30000000000000004,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.18452380952380953,
+                    "improvement": 0.19047619047619047,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.13690476190476192,
+                    "improvement": 0.23809523809523808,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 8,
+            "mean_accuracy": 0.5238095238095238,
+            "n_preserve_cases": 60,
+            "n_hard_cases": 42,
+            "train_accuracy": 0.5882352941176471,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": 0.05714285714285722,
+            "best_improvement": 0.35714285714285715,
+            "best_regression": 0.19999999999999996,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step. Start by briefly outlining the relevant laws or principles to set the context, and identify when relativistic physics is applicable, using appropriate formulas such as the relativistic Doppler shift formula. Identify and state any assumptions or simplifications commonly used in the problem context, such as neglecting negligible terms. Verify the formulas you use against known principles and ensure they align with the units provided i",
+            "final_prompt": "You will answer multiple-choice questions. Think step by step. Start by identifying the type of connection (series or parallel) and outline the relevant laws or principles, such as charge conservation and the relationship between charge, voltage, and capacitance. Clearly state any assumptions or simplifications, and verify the applicability of formulas against known principles and the problem context. Apply relevant laws sequentially, ensuring each step logically follows from the previous one. F",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.05714285714285722,
+                    "improvement": 0.35714285714285715,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.036904761904761885,
+                    "improvement": 0.2619047619047619,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.014285714285714235,
+                    "improvement": 0.2857142857142857,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 9,
+            "mean_accuracy": 0.6666666666666666,
+            "n_preserve_cases": 62,
+            "n_hard_cases": 40,
+            "train_accuracy": 0.6078431372549019,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": 0.25,
+            "best_improvement": 0.25,
+            "best_regression": 0.0,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step. Start by identifying the type of connection (series or parallel) and outline the relevant laws or principles, such as charge conservation and the relationship between charge, voltage, and capacitance. Clearly state any assumptions or simplifications, and verify the applicability of formulas against known principles and the problem context. Apply relevant laws sequentially, ensuring each step logically follows from the previous one. F",
+            "final_prompt": "You will answer multiple-choice questions. Think step by step. Start by identifying the type of connection (series or parallel) and outline the relevant laws or principles, such as charge conservation and the relationship between charge, voltage, and capacitance. Clearly state any assumptions or simplifications, and verify the applicability of formulas against known principles and the problem context. Apply relevant laws sequentially, ensuring each step logically follows from the previous one. F",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.25,
+                    "improvement": 0.25,
+                    "regression": 0.0,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.12500000000000006,
+                    "improvement": 0.275,
+                    "regression": 0.09999999999999998,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.09999999999999992,
+                    "improvement": 0.2,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 10,
+            "mean_accuracy": 0.6666666666666666,
+            "n_preserve_cases": 70,
+            "n_hard_cases": 32,
+            "train_accuracy": 0.6862745098039216,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": -0.04999999999999993,
+            "best_improvement": 0.25,
+            "best_regression": 0.19999999999999996,
+            "accepted": false,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step. Start by identifying the type of connection (series or parallel) and outline the relevant laws or principles, such as charge conservation and the relationship between charge, voltage, and capacitance. Clearly state any assumptions or simplifications, and verify the applicability of formulas against known principles and the problem context. Apply relevant laws sequentially, ensuring each step logically follows from the previous one. F",
+            "final_prompt": "You will answer multiple-choice questions. Think step by step. Start by identifying the type of connection (series or parallel) and outline the relevant laws or principles, such as charge conservation and the relationship between charge, voltage, and capacitance. Clearly state any assumptions or simplifications, and verify the applicability of formulas against known principles and the problem context. Apply relevant laws sequentially, ensuring each step logically follows from the previous one. F",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.04999999999999993,
+                    "improvement": 0.25,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.04999999999999993,
+                    "improvement": 0.25,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.15625,
+                    "improvement": 0.21875,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 11,
+            "mean_accuracy": 0.6666666666666666,
+            "n_preserve_cases": 71,
+            "n_hard_cases": 31,
+            "train_accuracy": 0.696078431372549,
+            "n_candidates": 3,
+            "best_candidate_id": 2,
+            "best_selection_score": -0.2024193548387096,
+            "best_improvement": 0.3225806451612903,
+            "best_regression": 0.35,
+            "accepted": false,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step. Start by identifying the type of connection (series or parallel) and outline the relevant laws or principles, such as charge conservation and the relationship between charge, voltage, and capacitance. Clearly state any assumptions or simplifications, and verify the applicability of formulas against known principles and the problem context. Apply relevant laws sequentially, ensuring each step logically follows from the previous one. F",
+            "final_prompt": "You will answer multiple-choice questions. Think step by step. Start by identifying the type of connection (series or parallel) and outline the relevant laws or principles, such as charge conservation and the relationship between charge, voltage, and capacitance. Clearly state any assumptions or simplifications, and verify the applicability of formulas against known principles and the problem context. Apply relevant laws sequentially, ensuring each step logically follows from the previous one. F",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.43870967741935496,
+                    "improvement": 0.16129032258064516,
+                    "regression": 0.4,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.2024193548387096,
+                    "improvement": 0.3225806451612903,
+                    "regression": 0.35,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.26693548387096766,
+                    "improvement": 0.25806451612903225,
+                    "regression": 0.35,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 12,
+            "mean_accuracy": 0.6666666666666666,
+            "n_preserve_cases": 71,
+            "n_hard_cases": 31,
+            "train_accuracy": 0.696078431372549,
+            "n_candidates": 3,
+            "best_candidate_id": 3,
+            "best_selection_score": -0.14919354838709678,
+            "best_improvement": 0.22580645161290322,
+            "best_regression": 0.25,
+            "accepted": false,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step. Start by identifying the type of connection (series or parallel) and outline the relevant laws or principles, such as charge conservation and the relationship between charge, voltage, and capacitance. Clearly state any assumptions or simplifications, and verify the applicability of formulas against known principles and the problem context. Apply relevant laws sequentially, ensuring each step logically follows from the previous one. F",
+            "final_prompt": "You will answer multiple-choice questions. Think step by step. Start by identifying the type of connection (series or parallel) and outline the relevant laws or principles, such as charge conservation and the relationship between charge, voltage, and capacitance. Clearly state any assumptions or simplifications, and verify the applicability of formulas against known principles and the problem context. Apply relevant laws sequentially, ensuring each step logically follows from the previous one. F",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.2346774193548386,
+                    "improvement": 0.2903225806451613,
+                    "regression": 0.35,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.15967741935483876,
+                    "improvement": 0.2903225806451613,
+                    "regression": 0.30000000000000004,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.14919354838709678,
+                    "improvement": 0.22580645161290322,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        }
+    ]
+}

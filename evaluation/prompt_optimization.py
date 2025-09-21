@@ -16,8 +16,8 @@ def set_seed(seed):
 
 def config():
     parser = argparse.ArgumentParser(description="Optimize a prompt for a task.")
-    parser.add_argument("--task", type=str, default="GSM8K_DSPy", help="The task to evaluate the model on.")
-    parser.add_argument("--evaluation_engine", type=str, default="gpt-4o", help="The API to use for evaluation.")
+    parser.add_argument("--task", type=str, default="MMLU_college_physics", help="The task to evaluate the model on.")
+    parser.add_argument("--evaluation_engine", type=str, default="gpt-5", help="The API to use for evaluation.")
     parser.add_argument("--test_engine", type=str, default="gpt-3.5-turbo-0125", help="The API to use for evaluation.")
     parser.add_argument("--batch_size", type=int, default=1, help="The batch size to use for training.")
     parser.add_argument("--max_epochs", type=int, default=1, help="The maximum number of epochs to train for.")
@@ -147,5 +147,5 @@ for epoch in range(args.max_epochs):
 
 # Also dump the final results
 import json
-with open(f"./figures/baseline_results_{args.task}_{args.test_engine}.json", "w") as f:
+with open(f"./figures/baseline_results_{args.task}_{args.evaluation_engine}_{args.test_engine}.json", "w") as f:
     json.dump(results, f)

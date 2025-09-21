@@ -1,0 +1,777 @@
+{
+    "test_acc": [
+        [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+        ],
+        [
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+        ],
+        [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+        ],
+        [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1
+        ],
+        [
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0
+        ],
+        [
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+        ],
+        [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1
+        ],
+        [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+        ],
+        [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0
+        ],
+        [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+        ],
+        [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+        ],
+        [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+        ],
+        [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+        ]
+    ],
+    "prompt": [
+        "You will answer multiple-choice questions. Think step by step. The goal is to select the correct final answer from the choices.",
+        "You will answer multiple-choice questions. Think step by step. The goal is to select the correct final answer from the choices.",
+        "You will answer multiple-choice questions. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, such as charge conservation and equivalent capacitance calculations. Perform detailed step-by-step calculations, including determining equivalent capacitance and charge distribution, before selecting an answer. Verify the logical consistency of your explanation with the final answer choice. Ensure all mathematical operations and formulas are applied correctly, particularly in calculating voltage and capacitance relationships. Verify any assumptions made during the problem-solving process. Provide detailed explanations for each calculation step, including unit conversions and formula rearrangements. After calculating the answer, verify it against the given choices and discuss any discrepancies. Ensure that your final answer respects the significant figures and precision of the given choices. Discuss potential sources of error and assumptions made during the calculation. Compare your calculated result with the ground truth answer and highlight any differences. Consider alternative methods or formulas that might lead to the correct answer. Briefly discuss the physical principles involved to enhance contextual understanding.",
+        "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, prioritizing aspects most relevant to the problem. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, such as charge conservation and equivalent capacitance calculations, and incorporate key concepts like the Meissner effect when applicable. Perform direct calculations using key formulas and constants specific to the problem, ensuring logical consistency in your reasoning. Organize your response by stating known formulas, substituting specific values, and performing calculations in a logical sequence. Avoid redundancy by ensuring each piece of information is presented only once, focusing on essential steps. Conclude with a clear statement of the answer choice, directly addressing the multiple-choice question. Briefly discuss the physical principles involved, but only insofar as they directly relate to the question, to enhance contextual understanding. Balance detailed explanations with efficient problem-solving to ensure clarity and relevance.",
+        "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, prioritizing aspects most relevant to the problem. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, such as charge conservation and equivalent capacitance calculations, and incorporate key concepts like the Meissner effect when applicable. Explicitly clarify the implications of the Meissner effect, noting that it results in the expulsion of magnetic fields from the superconductor, causing the magnetic field lines to be tangential to the surface. Emphasize the importance of aligning predictions with established scientific truths by cross-referencing conclusions with known principles and expected outcomes. Provide clear definitions of key terms such as \"fundamental frequency\" and \"harmonics\" within explanations. Perform direct calculations using key formulas and constants specific to the problem, ensuring logical consistency in your reasoning. Organize your response by stating known formulas, substituting specific values, and performing calculations in a logical sequence. Avoid redundancy by ensuring each piece of information is presented only once, focusing on essential steps. Conclude with a clear statement of the answer choice, directly addressing the multiple-choice question. Briefly discuss the physical principles involved, but only insofar as they directly relate to the question, to enhance contextual understanding. Balance detailed explanations with efficient problem-solving to ensure clarity and relevance. Introduce a verification step to cross-check the final answer against known correct answers or ground truth before concluding. Encourage critical thinking by considering multiple perspectives or interpretations before finalizing the answer. Incorporate a mechanism for error analysis and feedback loop integration, allowing the model to learn from flagged errors and refine its understanding of similar concepts. Include examples of correct reasoning and common pitfalls in similar problems to guide the model in avoiding common errors.",
+        "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, prioritizing aspects most relevant to the problem. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Perform necessary calculations to determine the answer, ensuring all steps are shown and logically sequenced. Use analogies or simpler language to explain complex concepts, making them accessible to users with varying levels of expertise. Include intermediate steps in calculations to facilitate understanding and error identification. Conclude each response with a direct answer to the multiple-choice question, explicitly stating the final answer choice that corresponds to the calculated result. Introduce a verification step to cross-check the final answer against known correct answers or ground truth, providing a confidence level or justification for the choice. Encourage critical thinking by considering multiple perspectives or interpretations before finalizing the answer. Incorporate a mechanism for error analysis and feedback loop integration, allowing the model to learn from flagged errors and refine its understanding of similar concepts. Include examples of correct reasoning and common pitfalls in similar problems to guide the model in avoiding common errors. Focus on essential steps and avoid redundancy, ensuring each piece of information is presented only once.",
+        "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, prioritizing aspects most relevant to the problem. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Perform necessary calculations to determine the answer, ensuring all steps are shown and logically sequenced. Use analogies or simpler language to explain complex concepts, making them accessible to users with varying levels of expertise. Include intermediate steps in calculations to facilitate understanding and error identification. Conclude each response with a direct answer to the multiple-choice question, explicitly stating the final answer choice that corresponds to the calculated result. Introduce a verification step to cross-check the final answer against known correct answers or ground truth, providing a confidence level or justification for the choice. Encourage critical thinking by considering multiple perspectives or interpretations before finalizing the answer. Incorporate a mechanism for error analysis and feedback loop integration, allowing the model to learn from flagged errors and refine its understanding of similar concepts. Include examples of correct reasoning and common pitfalls in similar problems to guide the model in avoiding common errors. Focus on essential steps and avoid redundancy, ensuring each piece of information is presented only once. Prioritize brevity and clarity by focusing on key steps and results, avoiding unnecessary reiteration of basic principles unless they are directly relevant to the question. Filter out information that does not directly contribute to solving the problem or answering the question. Simplify mathematical derivations by directly applying known values and relationships, highlighting key formulae and their application to the problem. Ensure a smooth and coherent progression of ideas, with clear transitions between concepts. Briefly mention common pitfalls or errors in similar problems, helping users avoid mistakes and reinforcing correct reasoning. Use analogies or real-world examples that relate to the problem, making abstract concepts more tangible and relatable to users. Consider error margins or rounding when comparing calculated values to provided options, and verify the units and constants used in calculations.",
+        "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, ensuring that the calculated answer exactly matches one of the provided options. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Perform necessary calculations to determine the answer, ensuring all steps are shown and logically sequenced. Use analogies or simpler language to explain complex concepts, making them accessible to users with varying levels of expertise. Include intermediate steps in calculations to facilitate understanding and error identification. Conclude each response with a direct answer to the multiple-choice question, explicitly stating the final answer choice that corresponds to the calculated result. Introduce a verification step to cross-check the final answer against known correct answers or ground truth, providing a confidence level or justification for the choice. Encourage critical thinking by considering multiple perspectives or interpretations before finalizing the answer. Incorporate a mechanism for error analysis and feedback loop integration, allowing the model to learn from flagged errors and refine its understanding of similar concepts. Include examples of correct reasoning and common pitfalls in similar problems to guide the model in avoiding common errors. Focus on essential steps and avoid redundancy, ensuring each piece of information is presented only once. Prioritize brevity and clarity by focusing on key steps and results, avoiding unnecessary reiteration of basic principles unless they are directly relevant to the question. Filter out information that does not directly contribute to solving the problem or answering the question. Simplify mathematical derivations by directly applying known values and relationships, highlighting key formulae and their application to the problem. Ensure a smooth and coherent progression of ideas, with clear transitions between concepts. Briefly mention common pitfalls or errors in similar problems, helping users avoid mistakes and reinforcing correct reasoning. Use analogies or real-world examples that relate to the problem, making abstract concepts more tangible and relatable to users. Consider error margins or rounding when comparing calculated values to provided options, and verify the units and constants used in calculations. Clearly state any assumptions made during the problem-solving process, such as ignoring negative signs or rounding values. Emphasize the importance of mathematical accuracy and logical consistency, and address any discrepancies between the calculated result and the provided options.",
+        "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, ensuring that the calculated answer exactly matches one of the provided options. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Perform necessary calculations to determine the answer, ensuring all steps are shown and logically sequenced. Use analogies or simpler language to explain complex concepts, making them accessible to users with varying levels of expertise. Include intermediate steps in calculations to facilitate understanding and error identification. Conclude each response with a direct answer to the multiple-choice question, explicitly stating the final answer choice that corresponds to the calculated result. Introduce a verification step to cross-check the final answer against known correct answers or ground truth, providing a confidence level or justification for the choice. Encourage critical thinking by considering multiple perspectives or interpretations before finalizing the answer. Incorporate a mechanism for error analysis and feedback loop integration, allowing the model to learn from flagged errors and refine its understanding of similar concepts. Include examples of correct reasoning and common pitfalls in similar problems to guide the model in avoiding common errors. Focus on essential steps and avoid redundancy, ensuring each piece of information is presented only once. Prioritize brevity and clarity by focusing on key steps and results, avoiding unnecessary reiteration of basic principles unless they are directly relevant to the question. Filter out information that does not directly contribute to solving the problem or answering the question. Simplify mathematical derivations by directly applying known values and relationships, highlighting key formulae and their application to the problem. Ensure a smooth and coherent progression of ideas, with clear transitions between concepts. Briefly mention common pitfalls or errors in similar problems, helping users avoid mistakes and reinforcing correct reasoning. Use analogies or real-world examples that relate to the problem, making abstract concepts more tangible and relatable to users. Consider error margins or rounding when comparing calculated values to provided options, and verify the units and constants used in calculations. Clearly state any assumptions made during the problem-solving process, such as ignoring negative signs or rounding values. Emphasize the importance of mathematical accuracy and logical consistency, and address any discrepancies between the calculated result and the provided options.",
+        "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, ensuring that the calculated answer exactly matches one of the provided options. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Use clear and consistent mathematical notation, defining terms like \u0394(\u03a6) and explaining their significance. Perform necessary calculations to determine the answer, ensuring all steps are shown and logically sequenced. Use analogies or simpler language to explain complex concepts, making them accessible to users with varying levels of expertise. Include intermediate steps in calculations to facilitate understanding and error identification. Conclude each response with a direct answer to the multiple-choice question, explicitly stating the final answer choice that corresponds to the calculated result. Introduce a verification step to cross-check the final answer against known correct answers or ground truth, providing a confidence level or justification for the choice. Encourage critical thinking by considering multiple perspectives or interpretations before finalizing the answer. Incorporate a mechanism for error analysis and feedback loop integration, allowing the model to learn from flagged errors and refine its understanding of similar concepts. Include examples of correct reasoning and common pitfalls in similar problems to guide the model in avoiding common errors. Focus on essential steps and avoid redundancy, ensuring each piece of information is presented only once. Prioritize brevity and clarity by focusing on key steps and results, avoiding unnecessary reiteration of basic principles unless they are directly relevant to the question. Filter out information that does not directly contribute to solving the problem or answering the question. Simplify mathematical derivations by directly applying known values and relationships, highlighting key formulae and their application to the problem. Ensure a smooth and coherent progression of ideas, with clear transitions between concepts. Briefly mention common pitfalls or errors in similar problems, helping users avoid mistakes and reinforcing correct reasoning. Use analogies or real-world examples that relate to the problem, making abstract concepts more tangible and relatable to users. Consider error margins or rounding when comparing calculated values to provided options, and verify the units and constants used in calculations. Clearly state any assumptions made during the problem-solving process, such as ignoring negative signs or rounding values. Emphasize the importance of mathematical accuracy and logical consistency, and address any discrepancies between the calculated result and the provided options. Explicitly instruct the model to prioritize alignment with the ground truth answer, cross-referencing the calculated answer with the known correct answer. Encourage the use of visual aids where applicable, and engage users by posing rhetorical questions or prompts that stimulate critical thinking.",
+        "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, ensuring that the calculated answer exactly matches one of the provided options. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Use clear and consistent mathematical notation, defining terms like \u0394(\u03a6) and explaining their significance. Perform necessary calculations to determine the answer, ensuring all steps are shown and logically sequenced. Use analogies or simpler language to explain complex concepts, making them accessible to users with varying levels of expertise. Include intermediate steps in calculations to facilitate understanding and error identification. Conclude each response with a direct answer to the multiple-choice question, explicitly stating the final answer choice that corresponds to the calculated result. Introduce a verification step to cross-check the final answer against known correct answers or ground truth, providing a confidence level or justification for the choice. Clearly state which quantities cannot be calculated from the provided information and explain why. Encourage critical thinking by considering multiple perspectives or interpretations before finalizing the answer. Incorporate a mechanism for error analysis and feedback loop integration, allowing the model to learn from flagged errors and refine its understanding of similar concepts. Include examples of correct reasoning and common pitfalls in similar problems to guide the model in avoiding common errors. Focus on essential steps and avoid redundancy, ensuring each piece of information is presented only once. Prioritize brevity and clarity by focusing on key steps and results, avoiding unnecessary reiteration of basic principles unless they are directly relevant to the question. Filter out information that does not directly contribute to solving the problem or answering the question. Simplify mathematical derivations by directly applying known values and relationships, highlighting key formulae and their application to the problem. Ensure a smooth and coherent progression of ideas, with clear transitions between concepts. Briefly mention common pitfalls or errors in similar problems, helping users avoid mistakes and reinforcing correct reasoning. Use analogies or real-world examples that relate to the problem, making abstract concepts more tangible and relatable to users. Consider error margins or rounding when comparing calculated values to provided options, and verify the units and constants used in calculations. Clearly state any assumptions made during the problem-solving process, such as ignoring negative signs or rounding values. Emphasize the importance of mathematical accuracy and logical consistency, and address any discrepancies between the calculated result and the provided options. Explicitly instruct the model to prioritize alignment with the ground truth answer, cross-referencing the calculated answer with the known correct answer. Encourage the use of visual aids where applicable, and engage users by posing rhetorical questions or prompts that stimulate critical thinking.",
+        "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, ensuring that the calculated answer exactly matches one of the provided options. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Use clear and consistent mathematical notation, defining terms like \u0394(\u03a6) and explaining their significance. Perform necessary calculations to determine the answer, ensuring all steps are shown and logically sequenced. Use analogies or simpler language to explain complex concepts, making them accessible to users with varying levels of expertise. Include intermediate steps in calculations to facilitate understanding and error identification. Conclude each response with a direct answer to the multiple-choice question, explicitly stating the final answer choice that corresponds to the calculated result. Introduce a verification step to cross-check the final answer against known correct answers or ground truth, providing a confidence level or justification for the choice. Clearly state which quantities cannot be calculated from the provided information and explain why. Encourage critical thinking by considering multiple perspectives or interpretations before finalizing the answer. Incorporate a mechanism for error analysis and feedback loop integration, allowing the model to learn from flagged errors and refine its understanding of similar concepts. Include examples of correct reasoning and common pitfalls in similar problems to guide the model in avoiding common errors. Focus on essential steps and avoid redundancy, ensuring each piece of information is presented only once. Prioritize brevity and clarity by focusing on key steps and results, avoiding unnecessary reiteration of basic principles unless they are directly relevant to the question. Filter out information that does not directly contribute to solving the problem or answering the question. Simplify mathematical derivations by directly applying known values and relationships, highlighting key formulae and their application to the problem. Ensure a smooth and coherent progression of ideas, with clear transitions between concepts. Briefly mention common pitfalls or errors in similar problems, helping users avoid mistakes and reinforcing correct reasoning. Use analogies or real-world examples that relate to the problem, making abstract concepts more tangible and relatable to users. Consider error margins or rounding when comparing calculated values to provided options, and verify the units and constants used in calculations. Clearly state any assumptions made during the problem-solving process, such as ignoring negative signs or rounding values. Emphasize the importance of mathematical accuracy and logical consistency, and address any discrepancies between the calculated result and the provided options. Explicitly instruct the model to prioritize alignment with the ground truth answer, cross-referencing the calculated answer with the known correct answer. Encourage the use of visual aids where applicable, and engage users by posing rhetorical questions or prompts that stimulate critical thinking.",
+        "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, ensuring that the calculated answer exactly matches one of the provided options. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Use clear and consistent mathematical notation, defining terms like \u0394(\u03a6) and explaining their significance. Perform necessary calculations to determine the answer, ensuring all steps are shown and logically sequenced. Use analogies or simpler language to explain complex concepts, making them accessible to users with varying levels of expertise. Include intermediate steps in calculations to facilitate understanding and error identification. Conclude each response with a direct answer to the multiple-choice question, explicitly stating the final answer choice that corresponds to the calculated result. Introduce a verification step to cross-check the final answer against known correct answers or ground truth, providing a confidence level or justification for the choice. Clearly state which quantities cannot be calculated from the provided information and explain why. Encourage critical thinking by considering multiple perspectives or interpretations before finalizing the answer. Incorporate a mechanism for error analysis and feedback loop integration, allowing the model to learn from flagged errors and refine its understanding of similar concepts. Include examples of correct reasoning and common pitfalls in similar problems to guide the model in avoiding common errors. Focus on essential steps and avoid redundancy, ensuring each piece of information is presented only once. Prioritize brevity and clarity by focusing on key steps and results, avoiding unnecessary reiteration of basic principles unless they are directly relevant to the question. Filter out information that does not directly contribute to solving the problem or answering the question. Simplify mathematical derivations by directly applying known values and relationships, highlighting key formulae and their application to the problem. Ensure a smooth and coherent progression of ideas, with clear transitions between concepts. Briefly mention common pitfalls or errors in similar problems, helping users avoid mistakes and reinforcing correct reasoning. Use analogies or real-world examples that relate to the problem, making abstract concepts more tangible and relatable to users. Consider error margins or rounding when comparing calculated values to provided options, and verify the units and constants used in calculations. Clearly state any assumptions made during the problem-solving process, such as ignoring negative signs or rounding values. Emphasize the importance of mathematical accuracy and logical consistency, and address any discrepancies between the calculated result and the provided options. Explicitly instruct the model to prioritize alignment with the ground truth answer, cross-referencing the calculated answer with the known correct answer. Encourage the use of visual aids where applicable, and engage users by posing rhetorical questions or prompts that stimulate critical thinking."
+    ],
+    "validation_acc": [],
+    "rank": [
+        {
+            "step": 1,
+            "mean_accuracy": 0.47619047619047616,
+            "n_preserve_cases": 39,
+            "n_hard_cases": 22,
+            "train_accuracy": 0.639344262295082,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": -0.08636363636363642,
+            "best_improvement": 0.36363636363636365,
+            "best_regression": 0.30000000000000004,
+            "accepted": false,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step. The goal is to select the correct final answer from the choices.",
+            "final_prompt": "You will answer multiple-choice questions. Think step by step. The goal is to select the correct final answer from the choices.",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.08636363636363642,
+                    "improvement": 0.36363636363636365,
+                    "regression": 0.30000000000000004,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.08636363636363642,
+                    "improvement": 0.36363636363636365,
+                    "regression": 0.30000000000000004,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.26818181818181824,
+                    "improvement": 0.18181818181818182,
+                    "regression": 0.30000000000000004,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 2,
+            "mean_accuracy": 0.5714285714285714,
+            "n_preserve_cases": 39,
+            "n_hard_cases": 22,
+            "train_accuracy": 0.639344262295082,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": 0.18409090909090908,
+            "best_improvement": 0.4090909090909091,
+            "best_regression": 0.15000000000000002,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step. The goal is to select the correct final answer from the choices.",
+            "final_prompt": "You will answer multiple-choice questions. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, such as charge conservation and equivalent capacitance calculations. Perform detailed step-by-step calculations, including determining equivalent capacitance and charge distribution, before selecting an answer. Verify the logical consistency of your explanation with the final answer choice. Ensure all ma",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.18409090909090908,
+                    "improvement": 0.4090909090909091,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.08636363636363642,
+                    "improvement": 0.36363636363636365,
+                    "regression": 0.30000000000000004,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": 0.1545454545454546,
+                    "improvement": 0.45454545454545453,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 3,
+            "mean_accuracy": 0.5714285714285714,
+            "n_preserve_cases": 42,
+            "n_hard_cases": 19,
+            "train_accuracy": 0.6885245901639344,
+            "n_candidates": 3,
+            "best_candidate_id": 2,
+            "best_selection_score": 0.015789473684210575,
+            "best_improvement": 0.3157894736842105,
+            "best_regression": 0.19999999999999996,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, such as charge conservation and equivalent capacitance calculations. Perform detailed step-by-step calculations, including determining equivalent capacitance and charge distribution, before selecting an answer. Verify the logical consistency of your explanation with the final answer choice. Ensure all ma",
+            "final_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, prioritizing aspects most relevant to the problem. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, such as charge conservation and equivalent capacitance calculations, and incorporate key concepts like the Meissner effect when applicable. Perform direct calculations using key formulas and",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.06710526315789478,
+                    "improvement": 0.15789473684210525,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.015789473684210575,
+                    "improvement": 0.3157894736842105,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.16447368421052633,
+                    "improvement": 0.21052631578947367,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 4,
+            "mean_accuracy": 0.6190476190476191,
+            "n_preserve_cases": 41,
+            "n_hard_cases": 20,
+            "train_accuracy": 0.6721311475409836,
+            "n_candidates": 3,
+            "best_candidate_id": 2,
+            "best_selection_score": 0.12499999999999994,
+            "best_improvement": 0.2,
+            "best_regression": 0.050000000000000044,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, prioritizing aspects most relevant to the problem. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, such as charge conservation and equivalent capacitance calculations, and incorporate key concepts like the Meissner effect when applicable. Perform direct calculations using key formulas and",
+            "final_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, prioritizing aspects most relevant to the problem. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, such as charge conservation and equivalent capacitance calculations, and incorporate key concepts like the Meissner effect when applicable. Explicitly clarify the implications of the Meissne",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.0749999999999999,
+                    "improvement": 0.0,
+                    "regression": -0.04999999999999993,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.12499999999999994,
+                    "improvement": 0.2,
+                    "regression": 0.050000000000000044,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": 0.0749999999999999,
+                    "improvement": 0.0,
+                    "regression": -0.04999999999999993,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 5,
+            "mean_accuracy": 0.2857142857142857,
+            "n_preserve_cases": 43,
+            "n_hard_cases": 18,
+            "train_accuracy": 0.7049180327868853,
+            "n_candidates": 3,
+            "best_candidate_id": 2,
+            "best_selection_score": 0.25833333333333325,
+            "best_improvement": 0.3333333333333333,
+            "best_regression": 0.050000000000000044,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, prioritizing aspects most relevant to the problem. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, such as charge conservation and equivalent capacitance calculations, and incorporate key concepts like the Meissner effect when applicable. Explicitly clarify the implications of the Meissne",
+            "final_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, prioritizing aspects most relevant to the problem. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Perform necessary calculations t",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.06111111111111117,
+                    "improvement": 0.3888888888888889,
+                    "regression": 0.30000000000000004,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.25833333333333325,
+                    "improvement": 0.3333333333333333,
+                    "regression": 0.050000000000000044,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.20833333333333334,
+                    "improvement": 0.16666666666666666,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 6,
+            "mean_accuracy": 0.5238095238095238,
+            "n_preserve_cases": 41,
+            "n_hard_cases": 20,
+            "train_accuracy": 0.6721311475409836,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": 0.10000000000000003,
+            "best_improvement": 0.25,
+            "best_regression": 0.09999999999999998,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, prioritizing aspects most relevant to the problem. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Perform necessary calculations t",
+            "final_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, prioritizing aspects most relevant to the problem. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Perform necessary calculations t",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.10000000000000003,
+                    "improvement": 0.25,
+                    "regression": 0.09999999999999998,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.050000000000000044,
+                    "improvement": 0.35,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": 0.025000000000000022,
+                    "improvement": 0.4,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 7,
+            "mean_accuracy": 0.5714285714285714,
+            "n_preserve_cases": 38,
+            "n_hard_cases": 23,
+            "train_accuracy": 0.6229508196721312,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": 0.13478260869565223,
+            "best_improvement": 0.43478260869565216,
+            "best_regression": 0.19999999999999996,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, prioritizing aspects most relevant to the problem. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Perform necessary calculations t",
+            "final_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, ensuring that the calculated answer exactly matches one of the provided options. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Pe",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.13478260869565223,
+                    "improvement": 0.43478260869565216,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.007608695652173952,
+                    "improvement": 0.21739130434782608,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": 0.0,
+                    "improvement": 0.0,
+                    "regression": 0.0,
+                    "source": "current_prompt_batch_solved"
+                }
+            ]
+        },
+        {
+            "step": 8,
+            "mean_accuracy": 0.5714285714285714,
+            "n_preserve_cases": 41,
+            "n_hard_cases": 20,
+            "train_accuracy": 0.6721311475409836,
+            "n_candidates": 3,
+            "best_candidate_id": 2,
+            "best_selection_score": 0.0,
+            "best_improvement": 0.0,
+            "best_regression": 0.0,
+            "accepted": false,
+            "old_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, ensuring that the calculated answer exactly matches one of the provided options. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Pe",
+            "final_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, ensuring that the calculated answer exactly matches one of the provided options. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Pe",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.04999999999999993,
+                    "improvement": 0.25,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.0,
+                    "improvement": 0.0,
+                    "regression": 0.0,
+                    "source": "current_prompt_batch_solved"
+                },
+                {
+                    "id": 3,
+                    "score": -0.12500000000000003,
+                    "improvement": 0.1,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 9,
+            "mean_accuracy": 0.7142857142857143,
+            "n_preserve_cases": 41,
+            "n_hard_cases": 20,
+            "train_accuracy": 0.6721311475409836,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": 0.25,
+            "best_improvement": 0.25,
+            "best_regression": 0.0,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, ensuring that the calculated answer exactly matches one of the provided options. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Pe",
+            "final_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, ensuring that the calculated answer exactly matches one of the provided options. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Us",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.25,
+                    "improvement": 0.25,
+                    "regression": 0.0,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.07500000000000004,
+                    "improvement": 0.15,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.175,
+                    "improvement": 0.2,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 10,
+            "mean_accuracy": 0.6666666666666666,
+            "n_preserve_cases": 46,
+            "n_hard_cases": 15,
+            "train_accuracy": 0.7540983606557377,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": 0.32499999999999996,
+            "best_improvement": 0.4,
+            "best_regression": 0.050000000000000044,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, ensuring that the calculated answer exactly matches one of the provided options. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Us",
+            "final_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, ensuring that the calculated answer exactly matches one of the provided options. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Us",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.32499999999999996,
+                    "improvement": 0.4,
+                    "regression": 0.050000000000000044,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.1916666666666666,
+                    "improvement": 0.26666666666666666,
+                    "regression": 0.050000000000000044,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.09999999999999992,
+                    "improvement": 0.2,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 11,
+            "mean_accuracy": 0.6666666666666666,
+            "n_preserve_cases": 51,
+            "n_hard_cases": 10,
+            "train_accuracy": 0.8360655737704918,
+            "n_candidates": 3,
+            "best_candidate_id": 3,
+            "best_selection_score": -0.025000000000000022,
+            "best_improvement": 0.2,
+            "best_regression": 0.15000000000000002,
+            "accepted": false,
+            "old_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, ensuring that the calculated answer exactly matches one of the provided options. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Us",
+            "final_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, ensuring that the calculated answer exactly matches one of the provided options. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Us",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.6000000000000001,
+                    "improvement": 0.0,
+                    "regression": 0.4,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.4000000000000001,
+                    "improvement": 0.2,
+                    "regression": 0.4,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.025000000000000022,
+                    "improvement": 0.2,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 12,
+            "mean_accuracy": 0.6666666666666666,
+            "n_preserve_cases": 51,
+            "n_hard_cases": 10,
+            "train_accuracy": 0.8360655737704918,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": -0.02499999999999991,
+            "best_improvement": 0.5,
+            "best_regression": 0.35,
+            "accepted": false,
+            "old_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, ensuring that the calculated answer exactly matches one of the provided options. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Us",
+            "final_prompt": "You will answer multiple-choice questions. Focus on directly addressing the specific question being asked, ensuring that the calculated answer exactly matches one of the provided options. Begin by clearly stating the problem and known values to set the context. Carefully analyze the problem setup and configuration before proceeding with calculations. Apply fundamental principles relevant to the problem domain, and provide brief explanations for why certain equations or principles are applied. Us",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.02499999999999991,
+                    "improvement": 0.5,
+                    "regression": 0.35,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.050000000000000044,
+                    "improvement": 0.4,
+                    "regression": 0.30000000000000004,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.275,
+                    "improvement": 0.1,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        }
+    ]
+}

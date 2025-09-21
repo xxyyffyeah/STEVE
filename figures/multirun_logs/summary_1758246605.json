@@ -1,0 +1,26 @@
+[
+  {
+    "name": "StrategyQA_2",
+    "returncode": 1,
+    "seconds": 437.24098682403564,
+    "log": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_logs/StrategyQA_2.log",
+    "artifacts": [],
+    "run_dir": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/StrategyQA_2"
+  },
+  {
+    "name": "StrategyQA_1",
+    "returncode": 0,
+    "seconds": 1776.480041027069,
+    "log": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_logs/StrategyQA_1.log",
+    "artifacts": [],
+    "run_dir": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/StrategyQA_1"
+  },
+  {
+    "name": "StrategyQA_3",
+    "returncode": 1,
+    "seconds": 2298.617303133011,
+    "log": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_logs/StrategyQA_3.log",
+    "artifacts": [],
+    "run_dir": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/StrategyQA_3"
+  }
+]

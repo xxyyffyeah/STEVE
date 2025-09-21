@@ -1,0 +1,777 @@
+{
+    "test_acc": [
+        [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+        ],
+        [
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+        ],
+        [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+        ],
+        [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+        ],
+        [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+        ],
+        [
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1
+        ],
+        [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0
+        ],
+        [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+        ],
+        [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+        ],
+        [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+        ],
+        [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+        ],
+        [
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+        ],
+        [
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+        ]
+    ],
+    "prompt": [
+        "You will answer multiple-choice questions. Think step by step. The goal is to select the correct final answer from the choices.",
+        "You will answer multiple-choice questions. Think step by step and apply relevant principles, such as physics laws, accurately. Use vector analysis and consider force interactions and resultant motion. Verify each step of your reasoning process, ensuring logical consistency and coherence. Clearly state any assumptions and perform error analysis. Consistently use units and apply conversion factors correctly. Compare and discuss why other answer choices are less likely to be correct. Cross-verify your results with known outcomes for similar problems. The goal is to select the correct final answer from the choices.",
+        "You will answer multiple-choice questions. Think step by step and apply relevant principles, such as physics laws, accurately. Use vector analysis and consider force interactions and resultant motion. Verify each step of your reasoning process, ensuring logical consistency and coherence. Clearly state any assumptions and perform error analysis. Consistently use units and apply conversion factors correctly. Compare and discuss why other answer choices are less likely to be correct. Cross-verify your results with known outcomes for similar problems. Provide a brief explanation and directly state your final answer choice. After reasoning, clearly state your final answer choice by letter (e.g., 'The predicted answer is choice D'). Compare your final answer with the ground truth and state if it matches (1) or not (0). If your answer does not match the ground truth, briefly analyze where the error might have occurred. Ensure all calculations are correct and verify that your final answer corresponds to the correct choice. Your primary goal is to determine if your final answer matches the ground truth, not to provide extensive derivations. The goal is to select the correct final answer from the choices.",
+        "You will answer multiple-choice questions. Think step by step and apply relevant principles, such as physics laws, accurately. Use vector analysis and consider force interactions and resultant motion. Clearly label each step of the calculation process, especially when converting units or applying formulas, to ensure transparency and ease of understanding. Verify each step of your reasoning process by cross-referencing with known principles or performing a quick sanity check to ensure logical consistency. Clearly state any assumptions and perform error analysis, considering potential sources of error, including the precision of given data and assumptions made during the process. Consistently use units and apply conversion factors correctly, ensuring that all units are consistent and correctly converted, particularly when transitioning between different measurement systems. Compare and discuss why other answer choices are less likely to be correct. Cross-verify your results with known outcomes for similar problems. Explore different approaches or shortcuts that might simplify the problem, such as dimensional analysis or comparing intermediate results with expected values. Provide a brief explanation and directly state your final answer choice, matching the calculated value with the provided options and clearly indicating the selected choice by letter (e.g., 'The predicted answer is choice D'). After reasoning, conduct a sanity check to assess whether the result is physically plausible and aligns with typical values. Compare your final answer with the ground truth and state if it matches (1) or not (0). If your answer does not match the ground truth, briefly analyze where the error might have occurred. Ensure all calculations are correct and verify that your final answer corresponds to the correct choice. Your primary goal is to determine if your final answer matches the ground truth, not to provide extensive derivations. The goal is to select the correct final answer from the choices.",
+        "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice, ensuring that your reasoning is clear, concise, and directly supports your final selection. Think step by step and apply relevant principles accurately. Include key calculations or reasoning steps that directly support your final answer choice. Clearly state the final answer choice and provide a concise justification for this choice. Ensure that your reasoning directly connects the calculated result to one of the provided answer choices. Verify each calculation step against the problem's requirements and known formulas. Use a sanity check to assess whether the result is physically plausible and aligns with typical values, ensuring that the selected answer choice aligns with this value. If your final answer does not match the ground truth, briefly analyze where the error might have occurred. Focus on the magnitude of the result when making the final selection, and avoid unnecessary focus on irrelevant details. The goal is to select the correct final answer from the choices.",
+        "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked. Use a step-by-step approach to apply the correct formulas and principles, ensuring logical consistency in your reasoning. Verify each calculation step against the problem's requirements and known formulas, and check any assumptions made during the process. Simplify explanations and focus on clarity, avoiding unnecessary details. Clearly state the final answer choice and provide a concise justification, directly connecting your reasoning to the provided answer choices. If your final answer does not match the ground truth, perform a brief error analysis to identify potential misunderstandings or miscalculations. Focus on the magnitude of the result when making the final selection, and ensure that your reasoning aligns with the constraints and typical values. The goal is to select the correct final answer from the choices.",
+        "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked. Use a step-by-step approach to apply the correct formulas and principles, ensuring logical consistency in your reasoning. Clearly outline each calculation step and directly link them to the provided answer choices. Verify each calculation step against the problem's requirements and known formulas, and check any assumptions made during the process. Simplify explanations and focus on clarity, avoiding unnecessary details. Clearly state the final answer choice and provide a concise justification, directly connecting your reasoning to the provided answer choices. If your final answer does not match the ground truth, perform a brief error analysis to identify potential misunderstandings or miscalculations, and correct them if possible. Focus on the magnitude of the result when making the final selection, and ensure that your reasoning aligns with the constraints and typical values. Emphasize the importance of using correct units and constants, and verify their values for accuracy. The goal is to select the correct final answer from the choices, ensuring that it matches the ground truth.",
+        "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked. Use a step-by-step approach to apply the correct formulas and principles, ensuring logical consistency in your reasoning. Clearly outline each calculation step and directly link them to the provided answer choices. Verify each calculation step against the problem's requirements and known formulas, and check any assumptions made during the process. Simplify explanations and focus on clarity, avoiding unnecessary details. Clearly state the final answer choice and provide a concise justification, directly connecting your reasoning to the provided answer choices. If your final answer does not match the ground truth, perform a brief error analysis to identify potential misunderstandings or miscalculations, and correct them if possible. Focus on the magnitude of the result when making the final selection, and ensure that your reasoning aligns with the constraints and typical values. Emphasize the importance of using correct units and constants, and verify their values for accuracy. The goal is to select the correct final answer from the choices, ensuring that it matches the ground truth.",
+        "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked. Clearly differentiate between fixed properties and variable properties in scientific theories, ensuring a deep conceptual understanding of the subject matter. Use a step-by-step approach to apply the correct formulas and principles, ensuring logical consistency in your reasoning. Explicitly state the relationship between different components of a problem and how each contributes to the total. Clearly outline each calculation step, showing how substitutions and simplifications are made, and directly link them to the provided answer choices. Verify each calculation step against the problem's requirements and known formulas, and check any assumptions made during the process, clearly stating and verifying their validity. Simplify explanations and focus on clarity, avoiding unnecessary details. Clearly state the final answer choice and provide a concise justification, directly connecting your reasoning to the provided answer choices. If your final answer does not match the ground truth, perform a thorough error analysis to identify potential misunderstandings or miscalculations, and correct them if possible. Focus on the magnitude of the result when making the final selection, and ensure that your reasoning aligns with the constraints and typical values. Emphasize the importance of using correct units and constants, and verify their values for accuracy. Perform a final verification step to confirm that the final answer aligns with the given choices and the ground truth. The goal is to select the correct final answer from the choices, ensuring that it matches the ground truth.",
+        "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked. Clearly differentiate between fixed properties and variable properties in scientific theories, ensuring a deep conceptual understanding of the subject matter. Use a step-by-step approach to apply the correct formulas and principles, ensuring logical consistency in your reasoning. Explicitly state the relationship between different components of a problem and how each contributes to the total. Clearly outline each calculation step, showing how substitutions and simplifications are made, and directly link them to the provided answer choices. Verify each calculation step against the problem's requirements and known formulas, and check any assumptions made during the process, clearly stating and verifying their validity. Simplify explanations and focus on clarity, avoiding unnecessary details. Clearly state the final answer choice and provide a concise justification, directly connecting your reasoning to the provided answer choices. If your final answer does not match the ground truth, perform a thorough error analysis to identify potential misunderstandings or miscalculations, and correct them if possible. Focus on the magnitude of the result when making the final selection, and ensure that your reasoning aligns with the constraints and typical values. Emphasize the importance of using correct units and constants, and verify their values for accuracy. Perform a final verification step to confirm that the final answer aligns with the given choices and the ground truth. The goal is to select the correct final answer from the choices, ensuring that it matches the ground truth.",
+        "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked, including the specific type of problem and its context. Clearly differentiate between fixed properties and variable properties in scientific theories, ensuring a deep conceptual understanding of the subject matter. Use a step-by-step approach to apply the correct formulas and principles, ensuring logical consistency in your reasoning. Assess whether classical or relativistic physics is more applicable, and choose the corresponding formulas. Explicitly state the relationship between different components of a problem and how each contributes to the total. Clearly outline each calculation step, showing how substitutions and simplifications are made, and directly link them to the provided answer choices. Verify each calculation step against the problem's requirements and known formulas, and check any assumptions made during the process, clearly stating and verifying their validity. Simplify explanations and focus on clarity, avoiding unnecessary details. Clearly state the final answer choice and provide a concise justification, directly connecting your reasoning to the provided answer choices. If your final answer does not match the ground truth, perform a thorough error analysis to identify potential misunderstandings or miscalculations, and correct them if possible. Focus on the magnitude of the result when making the final selection, and ensure that your reasoning aligns with the constraints and typical values. Emphasize the importance of using correct units and constants, and verify their values for accuracy. Perform a final verification step to confirm that the final answer aligns with the given choices and the ground truth. The goal is to select the correct final answer from the choices, ensuring that it matches the ground truth.",
+        "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked, including the specific type of problem and its context. Clearly differentiate between fixed properties and variable properties in scientific theories, ensuring a deep conceptual understanding of the subject matter. Use a step-by-step approach to apply the correct formulas and principles, ensuring logical consistency in your reasoning. Assess whether classical or relativistic physics is more applicable, and choose the corresponding formulas. Explicitly state the relationship between different components of a problem and how each contributes to the total. Clearly outline each calculation step, showing how substitutions and simplifications are made, and directly link them to the provided answer choices. Verify each calculation step against the problem's requirements and known formulas, and check any assumptions made during the process, clearly stating and verifying their validity. Simplify explanations and focus on clarity, avoiding unnecessary details. Clearly state the final answer choice and provide a concise justification, directly connecting your reasoning to the provided answer choices. If your final answer does not match the ground truth, perform a thorough error analysis to identify potential misunderstandings or miscalculations, and correct them if possible. Focus on the magnitude of the result when making the final selection, and ensure that your reasoning aligns with the constraints and typical values. Emphasize the importance of using correct units and constants, and verify their values for accuracy. Perform a final verification step to confirm that the final answer aligns with the given choices and the ground truth. The goal is to select the correct final answer from the choices, ensuring that it matches the ground truth.",
+        "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked, including the specific type of problem and its context. Clearly differentiate between fixed properties and variable properties in scientific theories, ensuring a deep conceptual understanding of the subject matter. Use a step-by-step approach to apply the correct formulas and principles, ensuring logical consistency in your reasoning. Assess whether classical or relativistic physics is more applicable, and choose the corresponding formulas. Explicitly state the relationship between different components of a problem and how each contributes to the total. Clearly outline each calculation step, showing how substitutions and simplifications are made, and directly link them to the provided answer choices. Verify each calculation step against the problem's requirements and known formulas, and check any assumptions made during the process, clearly stating and verifying their validity. Simplify explanations and focus on clarity, avoiding unnecessary details. Clearly state the final answer choice and provide a concise justification, directly connecting your reasoning to the provided answer choices. After completing your analysis, clearly state the chosen answer from the provided options. If your final answer does not match the ground truth, perform a thorough error analysis to identify potential misunderstandings or miscalculations, and correct them if possible. Continuously check for potential errors or misinterpretations at each step, rather than waiting until the end. Focus on the magnitude of the result when making the final selection, and ensure that your reasoning aligns with the constraints and typical values. Emphasize the importance of using correct units and constants, and verify their values for accuracy. Ensure consistency and correctness in unit conversion. Perform a final verification step to confirm that the final answer aligns with the given choices and the ground truth. Explicitly state whether your chosen answer matches the ground truth and provide a brief justification. The goal is to select the correct final answer from the choices, ensuring that it matches the ground truth."
+    ],
+    "validation_acc": [],
+    "rank": [
+        {
+            "step": 1,
+            "mean_accuracy": 0.47619047619047616,
+            "n_preserve_cases": 38,
+            "n_hard_cases": 23,
+            "train_accuracy": 0.6229508196721312,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": 0.1423913043478262,
+            "best_improvement": 0.2173913043478261,
+            "best_regression": 0.04999999999999993,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step. The goal is to select the correct final answer from the choices.",
+            "final_prompt": "You will answer multiple-choice questions. Think step by step and apply relevant principles, such as physics laws, accurately. Use vector analysis and consider force interactions and resultant motion. Verify each step of your reasoning process, ensuring logical consistency and coherence. Clearly state any assumptions and perform error analysis. Consistently use units and apply conversion factors correctly. Compare and discuss why other answer choices are less likely to be correct. Cross-verify y",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.1423913043478262,
+                    "improvement": 0.2173913043478261,
+                    "regression": 0.04999999999999993,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.08260869565217382,
+                    "improvement": 0.2173913043478261,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": 0.011956521739130532,
+                    "improvement": 0.08695652173913043,
+                    "regression": 0.04999999999999993,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 2,
+            "mean_accuracy": 0.6190476190476191,
+            "n_preserve_cases": 40,
+            "n_hard_cases": 21,
+            "train_accuracy": 0.6557377049180327,
+            "n_candidates": 3,
+            "best_candidate_id": 3,
+            "best_selection_score": 0.25833333333333325,
+            "best_improvement": 0.3333333333333333,
+            "best_regression": 0.050000000000000044,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step and apply relevant principles, such as physics laws, accurately. Use vector analysis and consider force interactions and resultant motion. Verify each step of your reasoning process, ensuring logical consistency and coherence. Clearly state any assumptions and perform error analysis. Consistently use units and apply conversion factors correctly. Compare and discuss why other answer choices are less likely to be correct. Cross-verify y",
+            "final_prompt": "You will answer multiple-choice questions. Think step by step and apply relevant principles, such as physics laws, accurately. Use vector analysis and consider force interactions and resultant motion. Verify each step of your reasoning process, ensuring logical consistency and coherence. Clearly state any assumptions and perform error analysis. Consistently use units and apply conversion factors correctly. Compare and discuss why other answer choices are less likely to be correct. Cross-verify y",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.10833333333333328,
+                    "improvement": 0.3333333333333333,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.38214285714285706,
+                    "improvement": 0.14285714285714285,
+                    "regression": 0.35,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": 0.25833333333333325,
+                    "improvement": 0.3333333333333333,
+                    "regression": 0.050000000000000044,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 3,
+            "mean_accuracy": 0.42857142857142855,
+            "n_preserve_cases": 44,
+            "n_hard_cases": 17,
+            "train_accuracy": 0.7213114754098361,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": 0.052941176470588325,
+            "best_improvement": 0.35294117647058826,
+            "best_regression": 0.19999999999999996,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step and apply relevant principles, such as physics laws, accurately. Use vector analysis and consider force interactions and resultant motion. Verify each step of your reasoning process, ensuring logical consistency and coherence. Clearly state any assumptions and perform error analysis. Consistently use units and apply conversion factors correctly. Compare and discuss why other answer choices are less likely to be correct. Cross-verify y",
+            "final_prompt": "You will answer multiple-choice questions. Think step by step and apply relevant principles, such as physics laws, accurately. Use vector analysis and consider force interactions and resultant motion. Clearly label each step of the calculation process, especially when converting units or applying formulas, to ensure transparency and ease of understanding. Verify each step of your reasoning process by cross-referencing with known principles or performing a quick sanity check to ensure logical con",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.052941176470588325,
+                    "improvement": 0.35294117647058826,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.21470588235294125,
+                    "improvement": 0.23529411764705882,
+                    "regression": 0.30000000000000004,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.24705882352941183,
+                    "improvement": 0.35294117647058826,
+                    "regression": 0.4,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 4,
+            "mean_accuracy": 0.42857142857142855,
+            "n_preserve_cases": 43,
+            "n_hard_cases": 18,
+            "train_accuracy": 0.7049180327868853,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": 0.23888888888888893,
+            "best_improvement": 0.3888888888888889,
+            "best_regression": 0.09999999999999998,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step and apply relevant principles, such as physics laws, accurately. Use vector analysis and consider force interactions and resultant motion. Clearly label each step of the calculation process, especially when converting units or applying formulas, to ensure transparency and ease of understanding. Verify each step of your reasoning process by cross-referencing with known principles or performing a quick sanity check to ensure logical con",
+            "final_prompt": "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice, ensuring that your reasoning is clear, concise, and directly supports your final selection. Think step by step and apply relevant principles accurately. Include key calculations or reasoning steps that directly support your final answer choice. Clearly state the final answer choice and provide a concise justification for this choice. Ensure that your reasoning directly connects the ca",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.23888888888888893,
+                    "improvement": 0.3888888888888889,
+                    "regression": 0.09999999999999998,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.20277777777777772,
+                    "improvement": 0.2777777777777778,
+                    "regression": 0.050000000000000044,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": 0.18333333333333335,
+                    "improvement": 0.3333333333333333,
+                    "regression": 0.09999999999999998,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 5,
+            "mean_accuracy": 0.5714285714285714,
+            "n_preserve_cases": 39,
+            "n_hard_cases": 22,
+            "train_accuracy": 0.639344262295082,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": 0.03181818181818186,
+            "best_improvement": 0.18181818181818182,
+            "best_regression": 0.09999999999999998,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice, ensuring that your reasoning is clear, concise, and directly supports your final selection. Think step by step and apply relevant principles accurately. Include key calculations or reasoning steps that directly support your final answer choice. Clearly state the final answer choice and provide a concise justification for this choice. Ensure that your reasoning directly connects the ca",
+            "final_prompt": "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked. Use a step-by-step approach to apply the correct formulas and principles, ensuring logical consistency in your reasoning. Verify each calculation step against the problem's requirements and known formulas, and check any assumptions ",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.03181818181818186,
+                    "improvement": 0.18181818181818182,
+                    "regression": 0.09999999999999998,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.002272727272727232,
+                    "improvement": 0.22727272727272727,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.11818181818181811,
+                    "improvement": 0.18181818181818182,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 6,
+            "mean_accuracy": 0.47619047619047616,
+            "n_preserve_cases": 39,
+            "n_hard_cases": 22,
+            "train_accuracy": 0.639344262295082,
+            "n_candidates": 3,
+            "best_candidate_id": 2,
+            "best_selection_score": 0.1386363636363636,
+            "best_improvement": 0.36363636363636365,
+            "best_regression": 0.15000000000000002,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked. Use a step-by-step approach to apply the correct formulas and principles, ensuring logical consistency in your reasoning. Verify each calculation step against the problem's requirements and known formulas, and check any assumptions ",
+            "final_prompt": "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked. Use a step-by-step approach to apply the correct formulas and principles, ensuring logical consistency in your reasoning. Clearly outline each calculation step and directly link them to the provided answer choices. Verify each calcu",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.047727272727272674,
+                    "improvement": 0.2727272727272727,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.1386363636363636,
+                    "improvement": 0.36363636363636365,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.10227272727272729,
+                    "improvement": 0.2727272727272727,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 7,
+            "mean_accuracy": 0.47619047619047616,
+            "n_preserve_cases": 42,
+            "n_hard_cases": 19,
+            "train_accuracy": 0.6885245901639344,
+            "n_candidates": 3,
+            "best_candidate_id": 2,
+            "best_selection_score": -0.08157894736842114,
+            "best_improvement": 0.3684210526315789,
+            "best_regression": 0.30000000000000004,
+            "accepted": false,
+            "old_prompt": "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked. Use a step-by-step approach to apply the correct formulas and principles, ensuring logical consistency in your reasoning. Clearly outline each calculation step and directly link them to the provided answer choices. Verify each calcu",
+            "final_prompt": "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked. Use a step-by-step approach to apply the correct formulas and principles, ensuring logical consistency in your reasoning. Clearly outline each calculation step and directly link them to the provided answer choices. Verify each calcu",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.2394736842105264,
+                    "improvement": 0.21052631578947367,
+                    "regression": 0.30000000000000004,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.08157894736842114,
+                    "improvement": 0.3684210526315789,
+                    "regression": 0.30000000000000004,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.2394736842105264,
+                    "improvement": 0.21052631578947367,
+                    "regression": 0.30000000000000004,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 8,
+            "mean_accuracy": 0.5714285714285714,
+            "n_preserve_cases": 42,
+            "n_hard_cases": 19,
+            "train_accuracy": 0.6885245901639344,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": 0.2710526315789474,
+            "best_improvement": 0.42105263157894735,
+            "best_regression": 0.09999999999999998,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked. Use a step-by-step approach to apply the correct formulas and principles, ensuring logical consistency in your reasoning. Clearly outline each calculation step and directly link them to the provided answer choices. Verify each calcu",
+            "final_prompt": "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked. Clearly differentiate between fixed properties and variable properties in scientific theories, ensuring a deep conceptual understanding of the subject matter. Use a step-by-step approach to apply the correct formulas and principles,",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.2710526315789474,
+                    "improvement": 0.42105263157894735,
+                    "regression": 0.09999999999999998,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.05921052631578949,
+                    "improvement": 0.3157894736842105,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.08947368421052626,
+                    "improvement": 0.21052631578947367,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 9,
+            "mean_accuracy": 0.5714285714285714,
+            "n_preserve_cases": 43,
+            "n_hard_cases": 18,
+            "train_accuracy": 0.7049180327868853,
+            "n_candidates": 3,
+            "best_candidate_id": 3,
+            "best_selection_score": -0.022222222222222143,
+            "best_improvement": 0.2777777777777778,
+            "best_regression": 0.19999999999999996,
+            "accepted": false,
+            "old_prompt": "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked. Clearly differentiate between fixed properties and variable properties in scientific theories, ensuring a deep conceptual understanding of the subject matter. Use a step-by-step approach to apply the correct formulas and principles,",
+            "final_prompt": "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked. Clearly differentiate between fixed properties and variable properties in scientific theories, ensuring a deep conceptual understanding of the subject matter. Use a step-by-step approach to apply the correct formulas and principles,",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.24722222222222212,
+                    "improvement": 0.2777777777777778,
+                    "regression": 0.35,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.24444444444444438,
+                    "improvement": 0.05555555555555555,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.022222222222222143,
+                    "improvement": 0.2777777777777778,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 10,
+            "mean_accuracy": 0.47619047619047616,
+            "n_preserve_cases": 43,
+            "n_hard_cases": 18,
+            "train_accuracy": 0.7049180327868853,
+            "n_candidates": 3,
+            "best_candidate_id": 1,
+            "best_selection_score": 0.12777777777777782,
+            "best_improvement": 0.2777777777777778,
+            "best_regression": 0.09999999999999998,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked. Clearly differentiate between fixed properties and variable properties in scientific theories, ensuring a deep conceptual understanding of the subject matter. Use a step-by-step approach to apply the correct formulas and principles,",
+            "final_prompt": "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked, including the specific type of problem and its context. Clearly differentiate between fixed properties and variable properties in scientific theories, ensuring a deep conceptual understanding of the subject matter. Use a step-by-ste",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.12777777777777782,
+                    "improvement": 0.2777777777777778,
+                    "regression": 0.09999999999999998,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.13333333333333328,
+                    "improvement": 0.16666666666666666,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.022222222222222143,
+                    "improvement": 0.2777777777777778,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 11,
+            "mean_accuracy": 0.47619047619047616,
+            "n_preserve_cases": 42,
+            "n_hard_cases": 19,
+            "train_accuracy": 0.6885245901639344,
+            "n_candidates": 3,
+            "best_candidate_id": 3,
+            "best_selection_score": -0.02894736842105272,
+            "best_improvement": 0.42105263157894735,
+            "best_regression": 0.30000000000000004,
+            "accepted": false,
+            "old_prompt": "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked, including the specific type of problem and its context. Clearly differentiate between fixed properties and variable properties in scientific theories, ensuring a deep conceptual understanding of the subject matter. Use a step-by-ste",
+            "final_prompt": "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked, including the specific type of problem and its context. Clearly differentiate between fixed properties and variable properties in scientific theories, ensuring a deep conceptual understanding of the subject matter. Use a step-by-ste",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.2842105263157896,
+                    "improvement": 0.3157894736842105,
+                    "regression": 0.4,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.46447368421052626,
+                    "improvement": 0.21052631578947367,
+                    "regression": 0.44999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.02894736842105272,
+                    "improvement": 0.42105263157894735,
+                    "regression": 0.30000000000000004,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 12,
+            "mean_accuracy": 0.42857142857142855,
+            "n_preserve_cases": 42,
+            "n_hard_cases": 19,
+            "train_accuracy": 0.6885245901639344,
+            "n_candidates": 3,
+            "best_candidate_id": 3,
+            "best_selection_score": 0.09078947368421048,
+            "best_improvement": 0.3157894736842105,
+            "best_regression": 0.15000000000000002,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked, including the specific type of problem and its context. Clearly differentiate between fixed properties and variable properties in scientific theories, ensuring a deep conceptual understanding of the subject matter. Use a step-by-ste",
+            "final_prompt": "You will answer multiple-choice questions. Your main goal is to efficiently determine the correct answer choice by accurately applying relevant concepts and principles. Begin by thoroughly understanding the question's requirements and identifying what is being asked, including the specific type of problem and its context. Clearly differentiate between fixed properties and variable properties in scientific theories, ensuring a deep conceptual understanding of the subject matter. Use a step-by-ste",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.05921052631578949,
+                    "improvement": 0.3157894736842105,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.2394736842105264,
+                    "improvement": 0.21052631578947367,
+                    "regression": 0.30000000000000004,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": 0.09078947368421048,
+                    "improvement": 0.3157894736842105,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        }
+    ]
+}

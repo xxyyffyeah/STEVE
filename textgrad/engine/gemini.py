@@ -56,12 +56,23 @@ class ChatGemini(EngineLM, CachedEngine):
                                                           temperature=temperature,
                                                           top_p=top_p,
                                                           candidate_count=1)
-        
-        
-        response = client.generate_content(messages, 
-                                           generation_config=generation_config)
+        response_text = ""
+        max_attempts = 3
 
+        for attempt in range(max_attempts):
+            response = client.generate_content(messages, generation_config=generation_config)
+            try:
+                candidate_text = response.text
+            except ValueError:
+                if attempt < max_attempts - 1:
+                    continue
+            else:
+                if candidate_text:
+                    response_text = candidate_text
+                    break
+                if attempt < max_attempts - 1:
+                    continue
 
-        response = response.text
-        self._save_cache(sys_prompt_arg + prompt, response)
-        return response
+        if response_text:
+            self._save_cache(sys_prompt_arg + prompt, response_text)
+        return response_text

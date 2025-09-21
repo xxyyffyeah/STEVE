@@ -1,0 +1,32 @@
+[
+  {
+    "name": "MMLU_college_physics_1",
+    "returncode": 0,
+    "seconds": 1542.3262739181519,
+    "log": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_logs/MMLU_college_physics_1.log",
+    "artifacts": [
+      "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/MMLU_college_physics_1/results_MMLU_college_physics_gpt-4o_gpt-3.5-turbo-0125.json"
+    ],
+    "run_dir": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/MMLU_college_physics_1"
+  },
+  {
+    "name": "MMLU_college_physics_2",
+    "returncode": 0,
+    "seconds": 2965.0084540843964,
+    "log": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_logs/MMLU_college_physics_2.log",
+    "artifacts": [
+      "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/MMLU_college_physics_2/results_MMLU_college_physics_gemini-2.5-flash_gpt-3.5-turbo-0125.json"
+    ],
+    "run_dir": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/MMLU_college_physics_2"
+  },
+  {
+    "name": "MMLU_college_physics_3",
+    "returncode": 0,
+    "seconds": 5075.719224214554,
+    "log": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_logs/MMLU_college_physics_3.log",
+    "artifacts": [
+      "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/MMLU_college_physics_3/results_MMLU_college_physics_gpt-5_gpt-3.5-turbo-0125.json"
+    ],
+    "run_dir": "/Users/fredlee/Library/Mobile Documents/com~apple~CloudDocs/research/textgrad/figures/multirun_artifacts/MMLU_college_physics_3"
+  }
+]

@@ -1,0 +1,777 @@
+{
+    "test_acc": [
+        [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+        ],
+        [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+        ],
+        [
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0
+        ],
+        [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0
+        ],
+        [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+        ],
+        [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+        ],
+        [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+        ],
+        [
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+        ],
+        [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1
+        ],
+        [
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0
+        ],
+        [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+        ],
+        [
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+        ],
+        [
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+        ]
+    ],
+    "prompt": [
+        "You will answer multiple-choice questions. Think step by step. The goal is to select the correct final answer from the choices.",
+        "You will answer multiple-choice questions. Think step by step. The goal is to select the correct final answer from the choices.",
+        "You will answer multiple-choice questions. Focus on providing a concise and accurate final answer. Use relevant scientific principles or theorems to guide your reasoning. Summarize your thought process in a few sentences, prioritizing the final answer. Verify your calculations and cross-check against known principles. Output a binary result (1 for correct, 0 for incorrect) based on the correctness of your prediction. Ensure accuracy in intermediate calculations and handle potential errors in input data or assumptions.",
+        "You will answer multiple-choice questions. Focus on providing a concise and accurate final answer. Use relevant scientific principles or theorems to guide your reasoning. Summarize your thought process in a few sentences, prioritizing the final answer. Verify your calculations and cross-check against known principles. Output a binary result (1 for correct, 0 for incorrect) based on the correctness of your prediction. Ensure accuracy in intermediate calculations and handle potential errors in input data or assumptions.",
+        "You will answer multiple-choice questions. Focus on providing a concise and accurate final answer by prioritizing key points and relevant information directly related to the question. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, but simplify explanations to support the choice rather than dominate the response. Summarize your thought process in a few sentences, prioritizing the final answer. Verify your calculations and cross-check against known principles, ensuring consistent use of units to maintain clarity. Perform a quick validation of the calculated result against the provided choices to ensure alignment with expected answers. Recognize when your answer does not match any choices and consider re-evaluating the question or the options. Output a binary result (1 for correct, 0 for incorrect) based on the correctness of your prediction. Ensure accuracy in intermediate calculations and handle potential errors in input data or assumptions. Avoid repeating the final answer unnecessarily; state it once clearly.",
+        "You will answer multiple-choice questions. Begin by clearly stating the objective of the calculation and how it relates to the provided choices. Focus on providing a concise and accurate final answer by prioritizing key points and relevant information directly related to the question. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, but simplify explanations to support the choice rather than dominate the response. Prioritize direct calculations over detailed derivations unless necessary for understanding. Summarize your thought process in a few sentences, prioritizing the final answer. Verify your calculations and cross-check against known principles, ensuring consistent use of units to maintain clarity. Perform a quick validation of the calculated result against the provided choices to ensure alignment with expected answers. Recognize when your answer does not match any choices and consider re-evaluating the question or the options. Output a binary result (1 for correct, 0 for incorrect) based on the correctness of your prediction. Ensure accuracy in intermediate calculations and handle potential errors in input data or assumptions. Include a verification step to ensure the calculated result aligns with one of the provided answer choices, and re-evaluate if necessary. Conclude with a clear and concise statement of the final answer, indicating whether it matches the expected choice. Maintain focus on the main task by providing concise explanations and avoiding unnecessary repetition or elaboration.",
+        "You will answer multiple-choice questions. Begin by clearly stating the objective of the calculation and how it relates to the provided choices. Focus on providing a concise and accurate final answer by prioritizing key points and relevant information directly related to the question. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, ensuring a detailed understanding of the physical context and identifying relevant forces or components. Simplify explanations to support the choice rather than dominate the response. Prioritize direct calculations over detailed derivations unless necessary for understanding. Summarize your thought process in a few sentences, prioritizing the final answer. Verify your calculations and cross-check against known principles, ensuring consistent use of units to maintain clarity. Perform a quick validation of the calculated result against the provided choices to ensure alignment with expected answers. Recognize when your answer does not match any choices and consider re-evaluating the question or the options. Output a binary result (1 for correct, 0 for incorrect) based on the correctness of your prediction. Ensure accuracy in intermediate calculations and handle potential errors in input data or assumptions. Include a verification step to ensure the calculated result aligns with one of the provided answer choices, and re-evaluate if necessary. Conclude with a clear and concise statement of the final answer, indicating whether it matches the expected choice. Maintain focus on the main task by providing concise explanations and avoiding unnecessary repetition or elaboration. Emphasize the importance of accurate mathematical reasoning and logical reasoning processes, systematically evaluating each option against known principles. Incorporate a step for verification and confidence assessment, performing a secondary check of calculations and reasoning against known principles or expected outcomes. Recognize and analyze errors, and reevaluate the question or options if there is a discrepancy.",
+        "You will answer multiple-choice questions. Begin by clearly stating the objective of the calculation and how it relates to the provided choices. Focus on providing a concise and accurate final answer by prioritizing key points and relevant information directly related to the question. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, ensuring a detailed understanding of the physical context and identifying relevant forces or components. Simplify explanations to support the choice rather than dominate the response. Prioritize direct calculations over detailed derivations unless necessary for understanding. Summarize your thought process in a few sentences, prioritizing the final answer. Verify your calculations and cross-check against known principles, ensuring consistent use of units to maintain clarity. Perform a quick validation of the calculated result against the provided choices to ensure alignment with expected answers. Recognize when your answer does not match any choices and consider re-evaluating the question or the options. Output a binary result (1 for correct, 0 for incorrect) based on the correctness of your prediction. Ensure accuracy in intermediate calculations and handle potential errors in input data or assumptions. Include a verification step to ensure the calculated result aligns with one of the provided answer choices, and re-evaluate if necessary. Conclude with a clear and concise statement of the final answer, indicating whether it matches the expected choice. Maintain focus on the main task by providing concise explanations and avoiding unnecessary repetition or elaboration. Emphasize the importance of accurate mathematical reasoning and logical reasoning processes, systematically evaluating each option against known principles. Incorporate a step for verification and confidence assessment, performing a secondary check of calculations and reasoning against known principles or expected outcomes. Recognize and analyze errors, and reevaluate the question or options if there is a discrepancy.",
+        "You will answer multiple-choice questions. Begin by clearly stating the objective of the calculation and how it relates to the provided choices. Focus on providing a concise and accurate final answer by prioritizing key points and relevant information directly related to the question. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, ensuring a detailed understanding of the physical context and identifying relevant forces or components. Simplify explanations to support the choice rather than dominate the response. Prioritize direct calculations over detailed derivations unless necessary for understanding. Summarize your thought process in a few sentences, prioritizing the final answer. Verify your calculations and cross-check against known principles, ensuring consistent use of units to maintain clarity. Perform a quick validation of the calculated result against the provided choices to ensure alignment with expected answers. Recognize when your answer does not match any choices and consider re-evaluating the question or the options. Output a binary result (1 for correct, 0 for incorrect) based on the correctness of your prediction. Ensure accuracy in intermediate calculations and handle potential errors in input data or assumptions. Include a verification step to ensure the calculated result aligns with one of the provided answer choices, and re-evaluate if necessary. Conclude with a clear and concise statement of the final answer, indicating whether it matches the expected choice. Maintain focus on the main task by providing concise explanations and avoiding unnecessary repetition or elaboration. Emphasize the importance of accurate mathematical reasoning and logical reasoning processes, systematically evaluating each option against known principles. Incorporate a step for verification and confidence assessment, performing a secondary check of calculations and reasoning against known principles or expected outcomes. Recognize and analyze errors, and reevaluate the question or options if there is a discrepancy.",
+        "You will answer multiple-choice questions. Begin by stating the objective of the calculation only if it is not immediately clear or if it adds value to the understanding of the task. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, ensuring a detailed understanding of the context. Simplify explanations to support the choice rather than dominate the response. Prioritize direct calculations over detailed derivations unless necessary for understanding. Verify your calculations and cross-check against known principles, ensuring consistent use of units to maintain clarity. Perform a quick validation of the calculated result against the provided choices to ensure alignment with expected answers. If your answer does not match any choices, re-evaluate the question or the options, considering additional factors or alternative approaches. Output a binary result (1 for correct, 0 for incorrect) based on the correctness of your prediction. Ensure accuracy in intermediate calculations and handle potential errors in input data or assumptions. Include a verification step to ensure the calculated result aligns with one of the provided answer choices, and re-evaluate if necessary. Conclude with a clear and concise statement of the final answer, indicating whether it matches the expected choice. Emphasize the importance of accurate mathematical reasoning and logical reasoning processes, systematically evaluating each option against known principles. Incorporate a step for verification and confidence assessment, performing a secondary check of calculations and reasoning against known principles or expected outcomes. Recognize and analyze errors, and reevaluate the question or options if there is a discrepancy. Consider multiple orders of interference or other relevant factors if applicable, and ensure alignment with the provided choices.",
+        "You will answer multiple-choice questions. Begin by stating the objective of the calculation only if it is not immediately clear or if it adds value to the understanding of the task. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, ensuring a detailed understanding of the context. Simplify explanations to support the choice rather than dominate the response. Prioritize direct calculations over detailed derivations unless necessary for understanding. Verify your calculations and cross-check against known principles, ensuring consistent use of units to maintain clarity. Perform a quick validation of the calculated result against the provided choices to ensure alignment with expected answers. If your answer does not match any choices, re-evaluate the question or the options, considering additional factors or alternative approaches. Output a binary result (1 for correct, 0 for incorrect) based on the correctness of your prediction. Ensure accuracy in intermediate calculations and handle potential errors in input data or assumptions. Include a verification step to ensure the calculated result aligns with one of the provided answer choices, and re-evaluate if necessary. Conclude with a clear and concise statement of the final answer, indicating whether it matches the expected choice. Emphasize the importance of accurate mathematical reasoning and logical reasoning processes, systematically evaluating each option against known principles. Incorporate a step for verification and confidence assessment, performing a secondary check of calculations and reasoning against known principles or expected outcomes. Recognize and analyze errors, and reevaluate the question or options if there is a discrepancy. Consider multiple orders of interference or other relevant factors if applicable, and ensure alignment with the provided choices.",
+        "You will answer multiple-choice questions. Begin by clearly stating the objective of the calculation, especially if it is not immediately clear or if it adds value to the understanding of the task. Explicitly outline initial conditions and assumptions, such as when a particle is at rest or when relativistic effects are considered, before proceeding with calculations. Use relevant scientific principles or theorems, distinguishing between different concepts like time dilation and the relativistic Doppler effect, to guide your reasoning and ensure a detailed understanding of the context. Simplify explanations to support the choice rather than dominate the response. Prioritize direct calculations over detailed derivations unless necessary for understanding. Verify your calculations and cross-check against known principles, ensuring consistent use of units and documenting unit conversions to maintain clarity. Perform a quick validation of the calculated result against the provided choices to ensure alignment with expected answers. If your answer does not match any choices, re-evaluate the question or the options, considering additional factors or alternative approaches. Output a binary result (1 for correct, 0 for incorrect) based on the correctness of your prediction. Ensure accuracy in intermediate calculations and handle potential errors in input data or assumptions. Include a verification step to ensure the calculated result aligns with one of the provided answer choices, and re-evaluate if necessary. Conclude with a clear and concise statement of the final answer, explicitly indicating which choice it matches. Emphasize the importance of accurate mathematical reasoning and logical reasoning processes, systematically evaluating each option against known principles. Incorporate a step for verification and confidence assessment, performing a secondary check of calculations and reasoning against known principles or expected outcomes. Recognize and analyze errors, and reevaluate the question or options if there is a discrepancy. Consider multiple orders of interference or other relevant factors if applicable, and ensure alignment with the provided choices. Additionally, provide a brief overview of relevant scientific principles, such as special relativity, and explain their application to the problem to enhance understanding and educational value.",
+        "You will answer multiple-choice questions. Output only the letter corresponding to the correct answer. Begin by clearly stating the objective of the calculation if it adds value to understanding the task. Explicitly outline initial conditions and assumptions, such as when a particle is at rest or when relativistic effects are considered, before proceeding with calculations. Use relevant scientific principles or theorems, distinguishing between different concepts like time dilation and the relativistic Doppler effect, to guide your reasoning. Simplify explanations to support the choice rather than dominate the response, and provide detailed explanations only when explicitly requested or necessary for complex tasks. Prioritize direct calculations over detailed derivations unless necessary for understanding. Verify your calculations and cross-check against known principles, ensuring consistent use of units and documenting unit conversions to maintain clarity. Perform a quick validation of the calculated result against the provided choices to ensure alignment with expected answers. If your answer does not match any choices, re-evaluate the question or the options, considering additional factors or alternative approaches. Ensure accuracy in intermediate calculations and handle potential errors in input data or assumptions. Include a verification step to ensure the calculated result aligns with one of the provided answer choices, and re-evaluate if necessary. Conclude with a clear and concise statement of the final answer, explicitly indicating which choice it matches. Emphasize the importance of accurate mathematical reasoning and logical reasoning processes, systematically evaluating each option against known principles. Incorporate a step for verification and confidence assessment, performing a secondary check of calculations and reasoning against known principles or expected outcomes. Recognize and analyze errors, and reevaluate the question or options if there is a discrepancy. Consider multiple orders of interference or other relevant factors if applicable, and ensure alignment with the provided choices. Additionally, provide a brief overview of relevant scientific principles, such as special relativity, and explain their application to the problem to enhance understanding and educational value, but only when it does not interfere with the primary task of providing a concise and correct answer."
+    ],
+    "validation_acc": [],
+    "rank": [
+        {
+            "step": 1,
+            "mean_accuracy": 0.3333333333333333,
+            "n_preserve_cases": 61,
+            "n_hard_cases": 41,
+            "train_accuracy": 0.5980392156862745,
+            "n_candidates": 3,
+            "best_candidate_id": 3,
+            "best_selection_score": -0.009146341463414642,
+            "best_improvement": 0.36585365853658536,
+            "best_regression": 0.25,
+            "accepted": false,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step. The goal is to select the correct final answer from the choices.",
+            "final_prompt": "You will answer multiple-choice questions. Think step by step. The goal is to select the correct final answer from the choices.",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.18170731707317062,
+                    "improvement": 0.2682926829268293,
+                    "regression": 0.29999999999999993,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.3317073170731706,
+                    "improvement": 0.2682926829268293,
+                    "regression": 0.3999999999999999,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.009146341463414642,
+                    "improvement": 0.36585365853658536,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 2,
+            "mean_accuracy": 0.6190476190476191,
+            "n_preserve_cases": 60,
+            "n_hard_cases": 42,
+            "train_accuracy": 0.5882352941176471,
+            "n_candidates": 3,
+            "best_candidate_id": 2,
+            "best_selection_score": 0.2785714285714286,
+            "best_improvement": 0.42857142857142855,
+            "best_regression": 0.09999999999999998,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Think step by step. The goal is to select the correct final answer from the choices.",
+            "final_prompt": "You will answer multiple-choice questions. Focus on providing a concise and accurate final answer. Use relevant scientific principles or theorems to guide your reasoning. Summarize your thought process in a few sentences, prioritizing the final answer. Verify your calculations and cross-check against known principles. Output a binary result (1 for correct, 0 for incorrect) based on the correctness of your prediction. Ensure accuracy in intermediate calculations and handle potential errors in inp",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.15952380952380957,
+                    "improvement": 0.30952380952380953,
+                    "regression": 0.09999999999999998,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.2785714285714286,
+                    "improvement": 0.42857142857142855,
+                    "regression": 0.09999999999999998,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": 0.013095238095238049,
+                    "improvement": 0.23809523809523808,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 3,
+            "mean_accuracy": 0.6190476190476191,
+            "n_preserve_cases": 65,
+            "n_hard_cases": 37,
+            "train_accuracy": 0.6372549019607843,
+            "n_candidates": 3,
+            "best_candidate_id": 3,
+            "best_selection_score": -0.0837837837837837,
+            "best_improvement": 0.21621621621621623,
+            "best_regression": 0.19999999999999996,
+            "accepted": false,
+            "old_prompt": "You will answer multiple-choice questions. Focus on providing a concise and accurate final answer. Use relevant scientific principles or theorems to guide your reasoning. Summarize your thought process in a few sentences, prioritizing the final answer. Verify your calculations and cross-check against known principles. Output a binary result (1 for correct, 0 for incorrect) based on the correctness of your prediction. Ensure accuracy in intermediate calculations and handle potential errors in inp",
+            "final_prompt": "You will answer multiple-choice questions. Focus on providing a concise and accurate final answer. Use relevant scientific principles or theorems to guide your reasoning. Summarize your thought process in a few sentences, prioritizing the final answer. Verify your calculations and cross-check against known principles. Output a binary result (1 for correct, 0 for incorrect) based on the correctness of your prediction. Ensure accuracy in intermediate calculations and handle potential errors in inp",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.15270270270270275,
+                    "improvement": 0.2972972972972973,
+                    "regression": 0.30000000000000004,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.15878378378378377,
+                    "improvement": 0.21621621621621623,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.0837837837837837,
+                    "improvement": 0.21621621621621623,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 4,
+            "mean_accuracy": 0.47619047619047616,
+            "n_preserve_cases": 65,
+            "n_hard_cases": 37,
+            "train_accuracy": 0.6372549019607843,
+            "n_candidates": 3,
+            "best_candidate_id": 2,
+            "best_selection_score": 0.07837837837837847,
+            "best_improvement": 0.3783783783783784,
+            "best_regression": 0.19999999999999996,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Focus on providing a concise and accurate final answer. Use relevant scientific principles or theorems to guide your reasoning. Summarize your thought process in a few sentences, prioritizing the final answer. Verify your calculations and cross-check against known principles. Output a binary result (1 for correct, 0 for incorrect) based on the correctness of your prediction. Ensure accuracy in intermediate calculations and handle potential errors in inp",
+            "final_prompt": "You will answer multiple-choice questions. Focus on providing a concise and accurate final answer by prioritizing key points and relevant information directly related to the question. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, but simplify explanations to support the choice rather than dominate the response. Summarize your thought process in a few sentences, prioritizing the final",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.05067567567567566,
+                    "improvement": 0.32432432432432434,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.07837837837837847,
+                    "improvement": 0.3783783783783784,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.0837837837837837,
+                    "improvement": 0.21621621621621623,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 5,
+            "mean_accuracy": 0.6190476190476191,
+            "n_preserve_cases": 67,
+            "n_hard_cases": 35,
+            "train_accuracy": 0.6568627450980392,
+            "n_candidates": 3,
+            "best_candidate_id": 2,
+            "best_selection_score": 0.04285714285714293,
+            "best_improvement": 0.34285714285714286,
+            "best_regression": 0.19999999999999996,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Focus on providing a concise and accurate final answer by prioritizing key points and relevant information directly related to the question. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, but simplify explanations to support the choice rather than dominate the response. Summarize your thought process in a few sentences, prioritizing the final",
+            "final_prompt": "You will answer multiple-choice questions. Begin by clearly stating the objective of the calculation and how it relates to the provided choices. Focus on providing a concise and accurate final answer by prioritizing key points and relevant information directly related to the question. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, but simplify explanations to support the choice rather",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.042857142857142816,
+                    "improvement": 0.2571428571428571,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.04285714285714293,
+                    "improvement": 0.34285714285714286,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.07142857142857137,
+                    "improvement": 0.22857142857142856,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 6,
+            "mean_accuracy": 0.5714285714285714,
+            "n_preserve_cases": 64,
+            "n_hard_cases": 38,
+            "train_accuracy": 0.6274509803921569,
+            "n_candidates": 3,
+            "best_candidate_id": 2,
+            "best_selection_score": 0.09078947368421048,
+            "best_improvement": 0.3157894736842105,
+            "best_regression": 0.15000000000000002,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Begin by clearly stating the objective of the calculation and how it relates to the provided choices. Focus on providing a concise and accurate final answer by prioritizing key points and relevant information directly related to the question. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, but simplify explanations to support the choice rather",
+            "final_prompt": "You will answer multiple-choice questions. Begin by clearly stating the objective of the calculation and how it relates to the provided choices. Focus on providing a concise and accurate final answer by prioritizing key points and relevant information directly related to the question. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, ensuring a detailed understanding of the physical cont",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.007894736842105288,
+                    "improvement": 0.15789473684210525,
+                    "regression": 0.09999999999999998,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.09078947368421048,
+                    "improvement": 0.3157894736842105,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.04078947368421057,
+                    "improvement": 0.18421052631578946,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 7,
+            "mean_accuracy": 0.5714285714285714,
+            "n_preserve_cases": 68,
+            "n_hard_cases": 34,
+            "train_accuracy": 0.6666666666666666,
+            "n_candidates": 3,
+            "best_candidate_id": 2,
+            "best_selection_score": 0.0,
+            "best_improvement": 0.0,
+            "best_regression": 0.0,
+            "accepted": false,
+            "old_prompt": "You will answer multiple-choice questions. Begin by clearly stating the objective of the calculation and how it relates to the provided choices. Focus on providing a concise and accurate final answer by prioritizing key points and relevant information directly related to the question. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, ensuring a detailed understanding of the physical cont",
+            "final_prompt": "You will answer multiple-choice questions. Begin by clearly stating the objective of the calculation and how it relates to the provided choices. Focus on providing a concise and accurate final answer by prioritizing key points and relevant information directly related to the question. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, ensuring a detailed understanding of the physical cont",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.5897058823529413,
+                    "improvement": 0.23529411764705882,
+                    "regression": 0.55,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.0,
+                    "improvement": 0.0,
+                    "regression": 0.0,
+                    "source": "current_prompt_batch_solved"
+                },
+                {
+                    "id": 3,
+                    "score": -0.201470588235294,
+                    "improvement": 0.3235294117647059,
+                    "regression": 0.35,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 8,
+            "mean_accuracy": 0.5714285714285714,
+            "n_preserve_cases": 68,
+            "n_hard_cases": 34,
+            "train_accuracy": 0.6666666666666666,
+            "n_candidates": 3,
+            "best_candidate_id": 2,
+            "best_selection_score": 0.0,
+            "best_improvement": 0.0,
+            "best_regression": 0.0,
+            "accepted": false,
+            "old_prompt": "You will answer multiple-choice questions. Begin by clearly stating the objective of the calculation and how it relates to the provided choices. Focus on providing a concise and accurate final answer by prioritizing key points and relevant information directly related to the question. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, ensuring a detailed understanding of the physical cont",
+            "final_prompt": "You will answer multiple-choice questions. Begin by clearly stating the objective of the calculation and how it relates to the provided choices. Focus on providing a concise and accurate final answer by prioritizing key points and relevant information directly related to the question. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, ensuring a detailed understanding of the physical cont",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.1852941176470589,
+                    "improvement": 0.2647058823529412,
+                    "regression": 0.30000000000000004,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.0,
+                    "improvement": 0.0,
+                    "regression": 0.0,
+                    "source": "current_prompt_batch_solved"
+                },
+                {
+                    "id": 3,
+                    "score": -0.08088235294117646,
+                    "improvement": 0.29411764705882354,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 9,
+            "mean_accuracy": 0.47619047619047616,
+            "n_preserve_cases": 68,
+            "n_hard_cases": 34,
+            "train_accuracy": 0.6666666666666666,
+            "n_candidates": 3,
+            "best_candidate_id": 3,
+            "best_selection_score": 0.16029411764705875,
+            "best_improvement": 0.23529411764705882,
+            "best_regression": 0.050000000000000044,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Begin by clearly stating the objective of the calculation and how it relates to the provided choices. Focus on providing a concise and accurate final answer by prioritizing key points and relevant information directly related to the question. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, ensuring a detailed understanding of the physical cont",
+            "final_prompt": "You will answer multiple-choice questions. Begin by stating the objective of the calculation only if it is not immediately clear or if it adds value to the understanding of the task. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, ensuring a detailed understanding of the context. Simplify explanations to support the choice rather than dominate the response. Prioritize direct calculatio",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.026470588235294162,
+                    "improvement": 0.17647058823529413,
+                    "regression": 0.09999999999999998,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.08529411764705885,
+                    "improvement": 0.23529411764705882,
+                    "regression": 0.09999999999999998,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": 0.16029411764705875,
+                    "improvement": 0.23529411764705882,
+                    "regression": 0.050000000000000044,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 10,
+            "mean_accuracy": 0.47619047619047616,
+            "n_preserve_cases": 64,
+            "n_hard_cases": 38,
+            "train_accuracy": 0.6274509803921569,
+            "n_candidates": 3,
+            "best_candidate_id": 2,
+            "best_selection_score": -0.010526315789473606,
+            "best_improvement": 0.2894736842105263,
+            "best_regression": 0.19999999999999996,
+            "accepted": false,
+            "old_prompt": "You will answer multiple-choice questions. Begin by stating the objective of the calculation only if it is not immediately clear or if it adds value to the understanding of the task. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, ensuring a detailed understanding of the context. Simplify explanations to support the choice rather than dominate the response. Prioritize direct calculatio",
+            "final_prompt": "You will answer multiple-choice questions. Begin by stating the objective of the calculation only if it is not immediately clear or if it adds value to the understanding of the task. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, ensuring a detailed understanding of the context. Simplify explanations to support the choice rather than dominate the response. Prioritize direct calculatio",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.11578947368421047,
+                    "improvement": 0.18421052631578946,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.010526315789473606,
+                    "improvement": 0.2894736842105263,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": -0.13815789473684212,
+                    "improvement": 0.23684210526315788,
+                    "regression": 0.25,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 11,
+            "mean_accuracy": 0.6190476190476191,
+            "n_preserve_cases": 64,
+            "n_hard_cases": 38,
+            "train_accuracy": 0.6274509803921569,
+            "n_candidates": 3,
+            "best_candidate_id": 3,
+            "best_selection_score": 0.015789473684210575,
+            "best_improvement": 0.3157894736842105,
+            "best_regression": 0.19999999999999996,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Begin by stating the objective of the calculation only if it is not immediately clear or if it adds value to the understanding of the task. Clearly outline initial conditions and assumptions before proceeding with calculations. Use relevant scientific principles or theorems to guide your reasoning, ensuring a detailed understanding of the context. Simplify explanations to support the choice rather than dominate the response. Prioritize direct calculatio",
+            "final_prompt": "You will answer multiple-choice questions. Begin by clearly stating the objective of the calculation, especially if it is not immediately clear or if it adds value to the understanding of the task. Explicitly outline initial conditions and assumptions, such as when a particle is at rest or when relativistic effects are considered, before proceeding with calculations. Use relevant scientific principles or theorems, distinguishing between different concepts like time dilation and the relativistic ",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": -0.18684210526315798,
+                    "improvement": 0.2631578947368421,
+                    "regression": 0.30000000000000004,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": -0.18289473684210517,
+                    "improvement": 0.34210526315789475,
+                    "regression": 0.35,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": 0.015789473684210575,
+                    "improvement": 0.3157894736842105,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        },
+        {
+            "step": 12,
+            "mean_accuracy": 0.6190476190476191,
+            "n_preserve_cases": 64,
+            "n_hard_cases": 38,
+            "train_accuracy": 0.6274509803921569,
+            "n_candidates": 3,
+            "best_candidate_id": 3,
+            "best_selection_score": 0.3236842105263158,
+            "best_improvement": 0.47368421052631576,
+            "best_regression": 0.09999999999999998,
+            "accepted": true,
+            "old_prompt": "You will answer multiple-choice questions. Begin by clearly stating the objective of the calculation, especially if it is not immediately clear or if it adds value to the understanding of the task. Explicitly outline initial conditions and assumptions, such as when a particle is at rest or when relativistic effects are considered, before proceeding with calculations. Use relevant scientific principles or theorems, distinguishing between different concepts like time dilation and the relativistic ",
+            "final_prompt": "You will answer multiple-choice questions. Output only the letter corresponding to the correct answer. Begin by clearly stating the objective of the calculation if it adds value to understanding the task. Explicitly outline initial conditions and assumptions, such as when a particle is at rest or when relativistic effects are considered, before proceeding with calculations. Use relevant scientific principles or theorems, distinguishing between different concepts like time dilation and the relati",
+            "candidate_results": [
+                {
+                    "id": 1,
+                    "score": 0.17368421052631583,
+                    "improvement": 0.47368421052631576,
+                    "regression": 0.19999999999999996,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 2,
+                    "score": 0.0644736842105263,
+                    "improvement": 0.2894736842105263,
+                    "regression": 0.15000000000000002,
+                    "source": "optimized_from_batch_of_2"
+                },
+                {
+                    "id": 3,
+                    "score": 0.3236842105263158,
+                    "improvement": 0.47368421052631576,
+                    "regression": 0.09999999999999998,
+                    "source": "optimized_from_batch_of_2"
+                }
+            ]
+        }
+    ]
+}

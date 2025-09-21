@@ -14,10 +14,10 @@ def load_results():
     """加载两个优化器的结果数据"""
     current_dir = Path(__file__).parent
     
-    folderPath = "9-compare_randomness_seed"
+    folderPath = "yixuan-mmlu_college_physics"
     # 文件路径
-    adam_file = current_dir / folderPath / "results_BBH_object_counting_gpt-3.5-turbo-0125_1.json"
-    standard_file = current_dir / folderPath / "results_BBH_object_counting_gpt-3.5-turbo-0125_2.json"
+    adam_file = current_dir / folderPath / "baseline_2_results_MMLU_college_physics_gpt-3.5-turbo-0125.json"
+    standard_file = current_dir / folderPath / "baseline_results_MMLU_college_physics_gpt-3.5-turbo-0125.json"
     
     results = {}
     

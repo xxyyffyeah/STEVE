@@ -39,7 +39,7 @@ class MMLU(Dataset):
         assert split in ["train", "validation", "test"]
         self.data = load_dataset("cais/mmlu", subset, cache_dir=root, split=split if split != "train" else "dev")
         self.split = split
-        self._task_description = 'You will answer multiple-choice questions. Think step by step.'
+        self._task_description = 'You will answer multiple-choice questions. Think step by step. The goal is to select the correct final answer from the choices.'
             
     def __getitem__(self, index):
         row = self.data[index]
@@ -56,6 +56,9 @@ class MMLU(Dataset):
 
     def get_default_task_instruction(self):
         return "Given a multiple choice question, the goal is to select the correct final answer from the choices."
+    
+    def get_task_description(self):
+        return self._task_description
 
 
 class MMLUInstanceDataset(MMLU):

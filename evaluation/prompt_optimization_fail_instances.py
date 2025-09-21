@@ -18,10 +18,10 @@ def set_seed(seed):
 
 def config():
     parser = argparse.ArgumentParser(description="Optimize a prompt for a task.")
-    parser.add_argument("--task", type=str, default="GSM8K_DSPy", help="The task to evaluate the model on.")
+    parser.add_argument("--task", type=str, default="StrategyQA", help="The task to evaluate the model on.")
     parser.add_argument("--evaluation_engine", type=str, default="gpt-5", help="The API to use for evaluation.")
     parser.add_argument("--test_engine", type=str, default="gpt-3.5-turbo-0125", help="The API to use for evaluation.")
-    parser.add_argument("--batch_size", type=int, default=1, help="The batch size to use for training.")
+    parser.add_argument("--batch_size", type=int, default=2, help="The batch size to use for training.")
     parser.add_argument("--max_epochs", type=int, default=1, help="The maximum number of epochs to train for.")
     parser.add_argument("--seed", type=int, default=45)
     parser.add_argument("--run_validation", action="store_true", help="Whether to run validation or not.")
@@ -355,7 +355,7 @@ for epoch in range(args.max_epochs):
         
         print(f"Test accuracy: {current_acc:.2%}")
         
-        if steps >= 1:  # Limit steps
+        if steps >= 11:  # Limit steps
             break
 
 # Also dump the final results

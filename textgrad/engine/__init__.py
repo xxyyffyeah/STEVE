@@ -28,12 +28,18 @@ def validate_multimodal_engine(engine):
         raise ValueError(
             f"The engine provided is not multimodal. Please provide a multimodal engine, one of the following: {__MULTIMODAL_ENGINES__}")
 
+def _is_openai_chat_model(engine_name: str) -> bool:
+    """Heuristic: treat any model starting with 'gpt-' as an OpenAI Chat model.
+    This makes the resolver forward unknown but valid OpenAI models 
+    """
+    return engine_name.startswith("gpt-")
+
 def get_engine(engine_name: str, **kwargs) -> EngineLM:
     if engine_name in __ENGINE_NAME_SHORTCUTS__:
         engine_name = __ENGINE_NAME_SHORTCUTS__[engine_name]
 
-    if "seed" in kwargs and "gpt-4" not in engine_name and "gpt-3.5" not in engine_name and "gpt-35" not in engine_name:
-        raise ValueError(f"Seed is currently supported only for OpenAI engines, not {engine_name}")
+    if "seed" in kwargs and not _is_openai_chat_model(engine_name):
+        raise ValueError(f"Seed is currently supported only for OpenAI chat engines (gpt-*), not {engine_name}")
 
     if "cache" in kwargs and "experimental" not in engine_name:
         raise ValueError(f"Cache is currently supported only for LiteLLM engines, not {engine_name}")
@@ -47,7 +53,7 @@ def get_engine(engine_name: str, **kwargs) -> EngineLM:
         # remove engine_name "azure-" prefix
         engine_name = engine_name[6:]
         return AzureChatOpenAI(model_string=engine_name, **kwargs)
-    elif (("gpt-4" in engine_name) or ("gpt-3.5" in engine_name)):
+    elif _is_openai_chat_model(engine_name):
         from .openai import ChatOpenAI
         return ChatOpenAI(model_string=engine_name, is_multimodal=_check_if_multimodal(engine_name), **kwargs)
     elif "claude" in engine_name:
