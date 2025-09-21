@@ -1,5 +1,9 @@
 try:
     from openai import AzureOpenAI, OpenAI
+    try:
+        from openai import BadRequestError
+    except (ImportError, AttributeError):  # pragma: no cover - older SDKs
+        from openai.error import InvalidRequestError as BadRequestError
 except ImportError:
     raise ImportError(
         "If you'd like to use OpenAI models, please install the openai package by running `pip install openai`, and add 'OPENAI_API_KEY' to your environment variables."
@@ -71,7 +75,7 @@ class BaseOpenAIEngine(EngineLM, CachedEngine):
         prompt: str,
         system_prompt: str = None,
         temperature=0,
-        max_tokens=2000,
+        max_tokens=4096,
         top_p=0,
     ):
         sys_prompt_arg = system_prompt if system_prompt else self.system_prompt
@@ -83,7 +87,7 @@ class BaseOpenAIEngine(EngineLM, CachedEngine):
             return cache_or_none
         # print("cache miss")
         # print(sys_prompt_arg[:100], "\n", prompt[:100])
-        response = self.client.chat.completions.create(
+        request_kwargs = dict(
             model=self.model_string,
             messages=[
                 {"role": "system", "content": sys_prompt_arg},
@@ -93,10 +97,54 @@ class BaseOpenAIEngine(EngineLM, CachedEngine):
             presence_penalty=0,
             stop=None,
             temperature=temperature,
-            max_tokens=max_tokens,
             top_p=top_p,
-            seed= 42
+            seed=42,
         )
+
+        if max_tokens is not None:
+            request_kwargs["max_tokens"] = max_tokens
+
+        if self.model_string == "gpt-5" and request_kwargs.get("temperature") == 0:
+            request_kwargs["temperature"] = 1
+
+        applied_fallbacks = set()
+        while True:
+            try:
+                response = self.client.chat.completions.create(**request_kwargs)
+                break
+            except BadRequestError as error:
+                error_message = getattr(error, "message", None) or str(error)
+
+                if (
+                    max_tokens is not None
+                    and "max_tokens" in error_message
+                    and "max_completion_tokens" in error_message
+                    and "max_tokens" not in applied_fallbacks
+                ):
+                    request_kwargs.pop("max_tokens", None)
+                    request_kwargs["max_completion_tokens"] = max_tokens
+                    applied_fallbacks.add("max_tokens")
+                    continue
+
+                if (
+                    "temperature" in error_message
+                    and "does not support" in error_message
+                    and "temperature" not in applied_fallbacks
+                ):
+                    request_kwargs.pop("temperature", None)
+                    applied_fallbacks.add("temperature")
+                    continue
+
+                if (
+                    "top_p" in error_message
+                    and "unsupported" in error_message
+                    and "top_p" not in applied_fallbacks
+                ):
+                    request_kwargs.pop("top_p", None)
+                    applied_fallbacks.add("top_p")
+                    continue
+
+                raise
 
         response = response.choices[0].message.content
         self._save_cache(sys_prompt_arg + prompt, response)
@@ -143,17 +191,61 @@ class BaseOpenAIEngine(EngineLM, CachedEngine):
         if cache_or_none is not None:
             return cache_or_none
 
-        response = self.client.chat.completions.create(
+        request_kwargs = dict(
             model=self.model_string,
             messages=[
                 {"role": "system", "content": sys_prompt_arg},
                 {"role": "user", "content": formatted_content},
             ],
             temperature=temperature,
-            max_tokens=max_tokens,
             top_p=top_p,
             seed=42,
         )
+
+        if max_tokens is not None:
+            request_kwargs["max_tokens"] = max_tokens
+
+        if self.model_string == "gpt-5" and request_kwargs.get("temperature") == 0:
+            request_kwargs["temperature"] = 1
+
+        applied_fallbacks = set()
+        while True:
+            try:
+                response = self.client.chat.completions.create(**request_kwargs)
+                break
+            except BadRequestError as error:
+                error_message = getattr(error, "message", None) or str(error)
+
+                if (
+                    max_tokens is not None
+                    and "max_tokens" in error_message
+                    and "max_completion_tokens" in error_message
+                    and "max_tokens" not in applied_fallbacks
+                ):
+                    request_kwargs.pop("max_tokens", None)
+                    request_kwargs["max_completion_tokens"] = max_tokens
+                    applied_fallbacks.add("max_tokens")
+                    continue
+
+                if (
+                    "temperature" in error_message
+                    and "does not support" in error_message
+                    and "temperature" not in applied_fallbacks
+                ):
+                    request_kwargs.pop("temperature", None)
+                    applied_fallbacks.add("temperature")
+                    continue
+
+                if (
+                    "top_p" in error_message
+                    and "unsupported" in error_message
+                    and "top_p" not in applied_fallbacks
+                ):
+                    request_kwargs.pop("top_p", None)
+                    applied_fallbacks.add("top_p")
+                    continue
+
+                raise
 
         response_text = response.choices[0].message.content
         self._save_cache(cache_key, response_text)

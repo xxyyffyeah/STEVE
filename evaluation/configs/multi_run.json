@@ -1,0 +1,27 @@
+[
+  {
+    "name": "StrategyQA_1",
+    "script": "fail",
+    "task": "StrategyQA",
+    "evaluation_engine": "gpt-4o",
+    "test_engine": "gpt-3.5-turbo-0125",
+    "batch_size": 2
+  },
+  {
+    "name": "StrategyQA_2",
+    "script": "fail",
+    "task": "StrategyQA",
+    "evaluation_engine": "gemini-2.5-flash",
+    "test_engine": "gpt-3.5-turbo-0125",
+    "batch_size": 2
+  },
+  {
+    "name": "StrategyQA_3",
+    "script": "fail",
+    "task": "StrategyQA",
+    "evaluation_engine": "gpt-5",
+    "test_engine": "gpt-3.5-turbo-0125",
+    "batch_size": 2
+  }
+]
+        

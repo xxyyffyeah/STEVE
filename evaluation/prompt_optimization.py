@@ -16,12 +16,12 @@ def set_seed(seed):
 
 def config():
     parser = argparse.ArgumentParser(description="Optimize a prompt for a task.")
-    parser.add_argument("--task", type=str, default="BBH_object_counting", help="The task to evaluate the model on.")
+    parser.add_argument("--task", type=str, default="GSM8K_DSPy", help="The task to evaluate the model on.")
     parser.add_argument("--evaluation_engine", type=str, default="gpt-4o", help="The API to use for evaluation.")
     parser.add_argument("--test_engine", type=str, default="gpt-3.5-turbo-0125", help="The API to use for evaluation.")
     parser.add_argument("--batch_size", type=int, default=1, help="The batch size to use for training.")
     parser.add_argument("--max_epochs", type=int, default=1, help="The maximum number of epochs to train for.")
-    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--seed", type=int, default=36)
     parser.add_argument("--run_validation", action="store_true", help="Whether to run validation or not.")
     parser.add_argument("--do_not_run_larger_model", action="store_true", help="Whether to run the larger model or not.")
     parser.add_argument("--num_threads", type=int, default=32, help="The number of threads to use for evaluation.")
@@ -108,7 +108,7 @@ model = tg.BlackboxLLM(llm_api_test, system_prompt)
 
 optimizer = tg.TextualGradientDescent(engine=llm_api_eval, parameters=[system_prompt])
 
-results = {"test_acc": [], "prompt": [], "validation_acc": []}
+results = {"test_acc": [], "prompt": [], "validation_acc": [], "rank": []}
 # results["test_acc"].append(eval_dataset(test_set, eval_fn, model))
 # results["validation_acc"].append(eval_dataset(val_set, eval_fn, model))
 results["prompt"].append(system_prompt.get_value())
@@ -135,12 +135,17 @@ for epoch in range(args.max_epochs):
         #     run_validation_revert(system_prompt, results, model, eval_fn, val_set)
         # print("sys prompt: ", system_prompt)
         test_acc = eval_dataset(test_set, eval_fn, model)
+        current_acc = np.mean(test_acc)
         results["test_acc"].append(test_acc)
         results["prompt"].append(system_prompt.get_value())
-        if steps == 3:
+        results["rank"].append({
+            "step": int(steps + 1),
+            "mean_accuracy": float(current_acc)
+        })
+        if steps == 11:
             break
 
 # Also dump the final results
 import json
-with open(f"./figures/results_{args.task}_{args.test_engine}.json", "w") as f:
+with open(f"./figures/baseline_results_{args.task}_{args.test_engine}.json", "w") as f:
     json.dump(results, f)
