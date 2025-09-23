@@ -138,7 +138,7 @@ for epoch in range(args.max_epochs):
         test_acc = eval_dataset(test_set, eval_fn, model)
         results["test_acc"].append(test_acc)
         results["prompt"].append(system_prompt.get_value())
-        results["rank"].append((np.mean(test_acc), eval_output_variable.value, str(system_prompt.get_value()).split("."), x.value))
+        results["rank"].append((np.mean(test_acc), eval_output_variable.value, str(system_prompt.get_value()).split("."), x.value, response.value))
         if steps == 50:
             break
 results["rank"].sort(reverse=True)
