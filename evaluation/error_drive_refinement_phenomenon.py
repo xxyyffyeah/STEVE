@@ -10,18 +10,20 @@ from textgrad.tasks import load_task
 import numpy as np
 import random
 
+from collections import defaultdict
+
 def set_seed(seed):
     np.random.seed(seed)
     random.seed(seed)
 
 def config():
     parser = argparse.ArgumentParser(description="Optimize a prompt for a task.")
-    parser.add_argument("--task", type=str, default="StrategyQA", help="The task to evaluate the model on.")
+    parser.add_argument("--task", type=str, default="BBH_object_counting", help="The task to evaluate the model on.")
     parser.add_argument("--evaluation_engine", type=str, default="gpt-4o", help="The API to use for evaluation.")
     parser.add_argument("--test_engine", type=str, default="gpt-3.5-turbo-0125", help="The API to use for evaluation.")
-    parser.add_argument("--batch_size", type=int, default=3, help="The batch size to use for training.")
-    parser.add_argument("--max_epochs", type=int, default=3, help="The maximum number of epochs to train for.")
-    parser.add_argument("--seed", type=int, default=44)
+    parser.add_argument("--batch_size", type=int, default=1, help="The batch size to use for training.")
+    parser.add_argument("--max_epochs", type=int, default=1, help="The maximum number of epochs to train for.")
+    parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--run_validation", action="store_true", help="Whether to run validation or not.")
     parser.add_argument("--do_not_run_larger_model", action="store_true", help="Whether to run the larger model or not.")
     parser.add_argument("--num_threads", type=int, default=32, help="The number of threads to use for evaluation.")
@@ -101,22 +103,24 @@ model_evaluation = tg.BlackboxLLM(llm_api_eval, system_prompt)
 #     reference = np.mean(eval_dataset(test_set, eval_fn, model_evaluation))
 
 
-system_prompt = tg.Variable(STARTING_SYSTEM_PROMPT, 
-                            requires_grad=True,
-                            role_description="structured system prompt to a somewhat capable language model that specifies the behavior and strategies for the QA task")
-model = tg.BlackboxLLM(llm_api_test, system_prompt)
 
-optimizer = tg.TextualGradientDescent(engine=llm_api_eval, parameters=[system_prompt])
-
-results = {"test_acc": [], "prompt": [], "validation_acc": []}
-results["test_acc"].append(eval_dataset(test_set, eval_fn, model))
+results = {"test_acc": [], "prompt": [], "validation_acc": [], "rank": []}
+# results["test_acc"].append(eval_dataset(test_set, eval_fn, model))
 # results["validation_acc"].append(eval_dataset(val_set, eval_fn, model))
 results["prompt"].append(system_prompt.get_value())
 
 
 for epoch in range(args.max_epochs):
+    correct_examples = []
+    false_examples = []
     for steps, (batch_x, batch_y) in enumerate((pbar := tqdm(train_loader, position=0))):
         pbar.set_description(f"Training step {steps}. Epoch {epoch}")
+        system_prompt = tg.Variable(STARTING_SYSTEM_PROMPT, 
+                requires_grad=True,
+                role_description="structured system prompt to a somewhat capable language model that specifies the behavior and strategies for the QA task")
+
+        model = tg.BlackboxLLM(llm_api_test, system_prompt)
+        optimizer = tg.TextualGradientDescent(engine=llm_api_eval, parameters=[system_prompt])
         optimizer.zero_grad()
         losses = []
         for (x, y) in zip(batch_x, batch_y):
@@ -127,20 +131,28 @@ for epoch in range(args.max_epochs):
                 eval_output_variable = eval_fn(inputs=dict(prediction=response, ground_truth_answer=y))
             except:
                 eval_output_variable = eval_fn([x, y, response])
+                
             losses.append(eval_output_variable)
         total_loss = tg.sum(losses)
         total_loss.backward()
         optimizer.step()
-        if args.run_validation:
-            run_validation_revert(system_prompt, results, model, eval_fn, val_set)
-        print("sys prompt: ", system_prompt)
+        # if args.run_validation:
+        #     run_validation_revert(system_prompt, results, model, eval_fn, val_set)
+        # print("sys prompt: ", system_prompt)
         test_acc = eval_dataset(test_set, eval_fn, model)
-        results["test_acc"].append(test_acc)
+        # results["test_acc"].append(test_acc)
         results["prompt"].append(system_prompt.get_value())
-        if steps == 3:
+        if eval_output_variable.value == "1":
+            correct_examples.append(np.mean(test_acc))
+        else:
+            false_examples.append(np.mean(test_acc))
+        results["rank"].append((np.mean(test_acc), eval_output_variable.value, str(system_prompt.get_value()).split("."), x.value))
+        print(np.mean(correct_examples), np.mean(false_examples))
+        if steps == 50:
             break
+results["rank"].sort(reverse=True)
 
 # Also dump the final results
 import json
-with open(f"./figures/results_{args.task}_{args.test_engine}.json", "w") as f:
+with open(f"./figures/instance.json", "w") as f:
     json.dump(results, f)
