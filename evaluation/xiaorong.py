@@ -7,7 +7,6 @@ load_dotenv(override=True)
 from tqdm import tqdm
 import textgrad as tg
 from textgrad.tasks import load_task
-from textgrad.engine.call_stats import reset_call_stats, get_call_stats
 
 import numpy as np
 import random
@@ -35,7 +34,6 @@ def config():
     return parser.parse_args()
 
 args = config()
-reset_call_stats()
 
 
 def _build_few_shot_block(examples):
@@ -49,17 +47,6 @@ def _build_few_shot_block(examples):
             f"Example {idx + 1}:\nInput Question:\n{q_text}\nOutput: Answer:{a_text}"
         )
     return "\n\n".join(parts)
-
-
-def _format_call_stats(raw_stats):
-    formatted = {}
-    for (engine_type, model), data in raw_stats.items():
-        key = f"{engine_type}:{model}"
-        formatted[key] = {
-            "calls": data.get("calls", 0),
-            "tokens": data.get("tokens", 0),
-        }
-    return formatted
 
 def eval_sample(item, eval_fn, model):
     x, y = item
@@ -198,20 +185,13 @@ results["prompt"].append(system_prompt.get_value())
 
 if args.shots >= 0:
     initial_mean_acc = float(np.mean(initial_test_acc)) if len(initial_test_acc) > 0 else 0.0
-    call_stats = _format_call_stats(get_call_stats())
     print(
         f"[RESULT] task={args.task} eval={args.evaluation_engine} test={args.test_engine} "
         f"shots={args.shots} accuracy={initial_mean_acc:.4%}"
     )
-    if call_stats:
-        print("[CALL-STATS]")
-        for key, data in call_stats.items():
-            print(
-                f"  {key}: calls={data['calls']} tokens={data['tokens']}"
-            )
     log_entry = (
         f"{args.task}-{args.test_engine}-{args.evaluation_engine}-"
-        f"{args.shots}-{initial_mean_acc:.4f} calls={json.dumps(call_stats)}\n"
+        f"{args.shots}-{initial_mean_acc:.4f}\n"
     )
     log_path = Path(__file__).resolve().parent / "shots.log"
     with log_path.open("a", encoding="utf-8") as log_file:
@@ -246,17 +226,17 @@ for epoch in range(args.max_epochs):
             train_set_preserve, train_set_hard_pool = update_train_pools(model, eval_fn)
         
         # Check if we have any hard cases to work with
-        if len(train_set_hard_pool) == 0:
-            print("🎉 No more hard cases! All training examples are solved.")
+        if len(train_set_preserve) == 0:
+            print("⚠️ No preserve cases available for training. Stopping optimization loop.")
             break
         
         # Step 1: Generate multiple candidate prompts using n hard examples
         current_prompt = system_prompt.get_value()
         candidates = []
 
-        n_candidates_to_generate = min(args.n_hard_examples, (len(train_set_hard_pool) + args.batch_size - 1) // args.batch_size)
+        n_candidates_to_generate = min(args.n_hard_examples, (len(train_set_preserve) + args.batch_size - 1) // args.batch_size)
         if n_candidates_to_generate == 0:
-            print("No hard cases available, skipping this step.")
+            print("No preserve cases available for batching, skipping this step.")
             continue
         
         print(f"Generating {n_candidates_to_generate} candidates, each from a batch of size up to {args.batch_size}...")
@@ -266,9 +246,9 @@ for epoch in range(args.max_epochs):
             
             system_prompt.set_value(current_prompt)
 
-            # 从失败案例中随机采样一个批次
-            batch_size = min(args.batch_size, len(train_set_hard_pool))
-            batch = random.sample(train_set_hard_pool, batch_size)
+            # 从正确案例中随机采样一个批次
+            batch_size = min(args.batch_size, len(train_set_preserve))
+            batch = random.sample(train_set_preserve, batch_size)
 
             # 对批次中的每个样本进行前向传播，并收集反馈
             eval_outputs = []
@@ -297,13 +277,6 @@ for epoch in range(args.max_epochs):
             n_correct = sum(correct_flags)
             print(f"Batch correctness: {n_correct}/{len(batch)}")
 
-            # 如果整个批次都已正确解决，则跳过优化步骤
-            if all(correct_flags):
-                print("This batch is already solved. Using current prompt as a candidate.")
-                candidates.append({'prompt': current_prompt, 'source': 'current_prompt_batch_solved'})
-                continue
-            
-      
             optimizer.zero_grad()
             total_loss = tg.sum(eval_outputs)
             total_loss.backward()
@@ -336,7 +309,7 @@ for epoch in range(args.max_epochs):
         
         # Evaluate current prompt as baseline
         score_old = evaluate_on_sample_set(preserve_sample, current_prompt, llm_api_test, eval_fn)
-        improvement_old = evaluate_on_sample_set(train_set_hard_pool, current_prompt, llm_api_test, eval_fn)
+        train_score_old = evaluate_on_sample_set(train_set_preserve, current_prompt, llm_api_test, eval_fn)
         
         for i, candidate in enumerate(candidates):
             candidate_prompt = candidate['prompt']
@@ -346,8 +319,8 @@ for epoch in range(args.max_epochs):
             regression = score_old - score_candidate
             
             # Evaluate improvement on all hard cases
-            improvement_candidate = evaluate_on_sample_set(train_set_hard_pool, candidate_prompt, llm_api_test, eval_fn)
-            improvement = improvement_candidate - improvement_old
+            train_score_candidate = evaluate_on_sample_set(train_set_preserve, candidate_prompt, llm_api_test, eval_fn)
+            improvement = train_score_candidate - train_score_old
             
             # Calculate selection score: improvement - lambda * regression
             selection_score = improvement - args.lambda_gating * regression
@@ -358,7 +331,7 @@ for epoch in range(args.max_epochs):
                 'improvement': improvement,
                 'selection_score': selection_score,
                 'preserve_score': score_candidate,
-                'hard_score': improvement_candidate,
+                'train_score': train_score_candidate,
                 'source': candidate['source']
             }
             candidate_results.append(candidate_metrics)
@@ -395,7 +368,8 @@ for epoch in range(args.max_epochs):
             "step": int(steps + 1),
             "mean_accuracy": float(current_acc),
             "n_preserve_cases": len(train_set_preserve),
-            "n_hard_cases": len(train_set_hard_pool),
+            "n_incorrect_cases": len(train_set_hard_pool),
+            "n_train_cases": len(train_set_preserve),
             "train_accuracy": float(len(train_set_preserve) / len(train_set_list)) if len(train_set_list) > 0 else 0.0,
             "n_candidates": len(candidates),
             "best_candidate_id": int(best_metrics['candidate_id']) if best_candidate else -1,
@@ -410,6 +384,7 @@ for epoch in range(args.max_epochs):
                 "score": float(cr['selection_score']),
                 "improvement": float(cr['improvement']),
                 "regression": float(cr['regression']),
+                "train_score": float(cr.get('train_score', 0.0)),
                 "source": str(cr['source'])
             } for cr in candidate_results]
         })
@@ -421,16 +396,8 @@ for epoch in range(args.max_epochs):
 
 # Also dump the final results
 
-output_path = Path("figures") / f"results_{args.task}_{args.evaluation_engine}_{args.test_engine}.json"
+output_path = Path("figures") / f"xiaorong_{args.task}_{args.evaluation_engine}_{args.test_engine}.json"
 print(f"Writing final results to {output_path}")
 output_path.parent.mkdir(parents=True, exist_ok=True)
 with output_path.open("w") as f:
     json.dump(results, f)
-
-call_stats = _format_call_stats(get_call_stats())
-if call_stats:
-    print("[CALL-STATS]")
-    for key, data in call_stats.items():
-        print(
-            f"  {key}: calls={data['calls']} tokens={data['tokens']}"
-        )

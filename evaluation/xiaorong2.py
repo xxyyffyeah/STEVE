@@ -7,7 +7,6 @@ load_dotenv(override=True)
 from tqdm import tqdm
 import textgrad as tg
 from textgrad.tasks import load_task
-from textgrad.engine.call_stats import reset_call_stats, get_call_stats
 
 import numpy as np
 import random
@@ -35,7 +34,6 @@ def config():
     return parser.parse_args()
 
 args = config()
-reset_call_stats()
 
 
 def _build_few_shot_block(examples):
@@ -49,17 +47,6 @@ def _build_few_shot_block(examples):
             f"Example {idx + 1}:\nInput Question:\n{q_text}\nOutput: Answer:{a_text}"
         )
     return "\n\n".join(parts)
-
-
-def _format_call_stats(raw_stats):
-    formatted = {}
-    for (engine_type, model), data in raw_stats.items():
-        key = f"{engine_type}:{model}"
-        formatted[key] = {
-            "calls": data.get("calls", 0),
-            "tokens": data.get("tokens", 0),
-        }
-    return formatted
 
 def eval_sample(item, eval_fn, model):
     x, y = item
@@ -198,20 +185,13 @@ results["prompt"].append(system_prompt.get_value())
 
 if args.shots >= 0:
     initial_mean_acc = float(np.mean(initial_test_acc)) if len(initial_test_acc) > 0 else 0.0
-    call_stats = _format_call_stats(get_call_stats())
     print(
         f"[RESULT] task={args.task} eval={args.evaluation_engine} test={args.test_engine} "
         f"shots={args.shots} accuracy={initial_mean_acc:.4%}"
     )
-    if call_stats:
-        print("[CALL-STATS]")
-        for key, data in call_stats.items():
-            print(
-                f"  {key}: calls={data['calls']} tokens={data['tokens']}"
-            )
     log_entry = (
         f"{args.task}-{args.test_engine}-{args.evaluation_engine}-"
-        f"{args.shots}-{initial_mean_acc:.4f} calls={json.dumps(call_stats)}\n"
+        f"{args.shots}-{initial_mean_acc:.4f}\n"
     )
     log_path = Path(__file__).resolve().parent / "shots.log"
     with log_path.open("a", encoding="utf-8") as log_file:
@@ -338,51 +318,51 @@ for epoch in range(args.max_epochs):
         score_old = evaluate_on_sample_set(preserve_sample, current_prompt, llm_api_test, eval_fn)
         improvement_old = evaluate_on_sample_set(train_set_hard_pool, current_prompt, llm_api_test, eval_fn)
         
-        for i, candidate in enumerate(candidates):
-            candidate_prompt = candidate['prompt']
+        # for i, candidate in enumerate(candidates):
+        #     candidate_prompt = candidate['prompt']
             
-            # Evaluate on preserve set
-            score_candidate = evaluate_on_sample_set(preserve_sample, candidate_prompt, llm_api_test, eval_fn)
-            regression = score_old - score_candidate
+        #     # Evaluate on preserve set
+        #     score_candidate = evaluate_on_sample_set(preserve_sample, candidate_prompt, llm_api_test, eval_fn)
+        #     regression = score_old - score_candidate
             
-            # Evaluate improvement on all hard cases
-            improvement_candidate = evaluate_on_sample_set(train_set_hard_pool, candidate_prompt, llm_api_test, eval_fn)
-            improvement = improvement_candidate - improvement_old
+        #     # Evaluate improvement on all hard cases
+        #     improvement_candidate = evaluate_on_sample_set(train_set_hard_pool, candidate_prompt, llm_api_test, eval_fn)
+        #     improvement = improvement_candidate - improvement_old
             
-            # Calculate selection score: improvement - lambda * regression
-            selection_score = improvement - args.lambda_gating * regression
+        #     # Calculate selection score: improvement - lambda * regression
+        #     selection_score = improvement - args.lambda_gating * regression
             
-            candidate_metrics = {
-                'candidate_id': i + 1,
-                'regression': regression,
-                'improvement': improvement,
-                'selection_score': selection_score,
-                'preserve_score': score_candidate,
-                'hard_score': improvement_candidate,
-                'source': candidate['source']
-            }
-            candidate_results.append(candidate_metrics)
+        #     candidate_metrics = {
+        #         'candidate_id': i + 1,
+        #         'regression': regression,
+        #         'improvement': improvement,
+        #         'selection_score': selection_score,
+        #         'preserve_score': score_candidate,
+        #         'hard_score': improvement_candidate,
+        #         'source': candidate['source']
+        #     }
+        #     candidate_results.append(candidate_metrics)
             
-            print(f"Candidate {i+1}: Score={selection_score:.4f} (Imp={improvement:.2%}, Reg={regression:.2%})")
+        #     print(f"Candidate {i+1}: Score={selection_score:.4f} (Imp={improvement:.2%}, Reg={regression:.2%})")
             
-            if selection_score > best_score:
-                best_score = selection_score
-                best_candidate = candidate
-                best_metrics = candidate_metrics
+        #     if selection_score > best_score:
+        #         best_score = selection_score
+        #         best_candidate = candidate
+        #         best_metrics = candidate_metrics
         
-        # Step 3: Apply the best candidate
-        print(f"\n--- Best candidate: #{best_metrics['candidate_id']} with score {best_score:.4f} ---")
+        # # Step 3: Apply the best candidate
+        # print(f"\n--- Best candidate: #{best_metrics['candidate_id']} with score {best_score:.4f} ---")
         
-        if best_candidate and best_score > 0:
-            print("✓ Accepting best candidate")
-            system_prompt.set_value(best_candidate['prompt'])
-            accepted = True
-            final_prompt = best_candidate['prompt']
-        else:
-            print("✗ No good candidate found, keeping current prompt")
-            system_prompt.set_value(current_prompt)
-            accepted = False
-            final_prompt = current_prompt
+        # if best_candidate and best_score > 0:
+        #     print("✓ Accepting best candidate")
+        #     system_prompt.set_value(best_candidate['prompt'])
+        #     accepted = True
+        #     final_prompt = best_candidate['prompt']
+        # else:
+        #     print("✗ No good candidate found, keeping current prompt")
+        #     system_prompt.set_value(current_prompt)
+        #     accepted = False
+        #     final_prompt = current_prompt
         
         # Evaluate on full test set
         print("\nEvaluating on test set...")
@@ -391,28 +371,29 @@ for epoch in range(args.max_epochs):
         
         results["test_acc"].append([int(x) for x in test_acc])  # Convert numpy types to int
         results["prompt"].append(system_prompt.get_value())
-        results["rank"].append({
-            "step": int(steps + 1),
-            "mean_accuracy": float(current_acc),
-            "n_preserve_cases": len(train_set_preserve),
-            "n_hard_cases": len(train_set_hard_pool),
-            "train_accuracy": float(len(train_set_preserve) / len(train_set_list)) if len(train_set_list) > 0 else 0.0,
-            "n_candidates": len(candidates),
-            "best_candidate_id": int(best_metrics['candidate_id']) if best_candidate else -1,
-            "best_selection_score": float(best_score),
-            "best_improvement": float(best_metrics.get('improvement', 0.0)),
-            "best_regression": float(best_metrics.get('regression', 0.0)),
-            "accepted": bool(accepted),
-            "old_prompt": str(current_prompt[:500]),
-            "final_prompt": str(final_prompt[:500]),
-            "candidate_results": [{
-                "id": int(cr['candidate_id']),
-                "score": float(cr['selection_score']),
-                "improvement": float(cr['improvement']),
-                "regression": float(cr['regression']),
-                "source": str(cr['source'])
-            } for cr in candidate_results]
-        })
+        results["rank"].append(float(current_acc))
+        # results["rank"].append({
+        #     "step": int(steps + 1),
+        #     "mean_accuracy": float(current_acc),
+        #     "n_preserve_cases": len(train_set_preserve),
+        #     "n_hard_cases": len(train_set_hard_pool),
+        #     "train_accuracy": float(len(train_set_preserve) / len(train_set_list)) if len(train_set_list) > 0 else 0.0,
+        #     "n_candidates": len(candidates),
+        #     "best_candidate_id": int(best_metrics['candidate_id']) if best_candidate else -1,
+        #     "best_selection_score": float(best_score),
+        #     "best_improvement": float(best_metrics.get('improvement', 0.0)),
+        #     "best_regression": float(best_metrics.get('regression', 0.0)),
+        #     "accepted": bool(accepted),
+        #     "old_prompt": str(current_prompt[:500]),
+        #     "final_prompt": str(final_prompt[:500]),
+        #     "candidate_results": [{
+        #         "id": int(cr['candidate_id']),
+        #         "score": float(cr['selection_score']),
+        #         "improvement": float(cr['improvement']),
+        #         "regression": float(cr['regression']),
+        #         "source": str(cr['source'])
+        #     } for cr in candidate_results]
+        # })
         
         print(f"Test accuracy: {current_acc:.2%}")
         
@@ -421,16 +402,8 @@ for epoch in range(args.max_epochs):
 
 # Also dump the final results
 
-output_path = Path("figures") / f"results_{args.task}_{args.evaluation_engine}_{args.test_engine}.json"
+output_path = Path("figures") / f"xiaorong2_{args.task}_{args.evaluation_engine}_{args.test_engine}.json"
 print(f"Writing final results to {output_path}")
 output_path.parent.mkdir(parents=True, exist_ok=True)
 with output_path.open("w") as f:
     json.dump(results, f)
-
-call_stats = _format_call_stats(get_call_stats())
-if call_stats:
-    print("[CALL-STATS]")
-    for key, data in call_stats.items():
-        print(
-            f"  {key}: calls={data['calls']} tokens={data['tokens']}"
-        )
